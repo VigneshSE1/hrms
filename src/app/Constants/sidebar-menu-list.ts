@@ -1,4 +1,4 @@
-import { MainMenu, MenuList } from '../models/sidebar-menu-list.model';
+import { MainMenu, MenuList } from '../Models/sidebar-menu-list.model';
 
 export const sidebarMenuLists: MenuList[] = [
   {
