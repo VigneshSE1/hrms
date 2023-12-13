@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { sidebarMenuLists } from 'src/app/Constants/sidebar-menu-list';
-import { MenuList } from 'src/app/Models/sidebar-menu-list.model';
-import { LayoutService } from 'src/app/Services/layout.service';
+import { sidebarMenuLists } from '../../Constants/sidebar-menu-list';
+import { MenuList } from '../../Models/sidebar-menu-list.model';
+import { LayoutService } from '../../Services/layout.service';
 
 @Component({
   selector: 'app-sidebar',
