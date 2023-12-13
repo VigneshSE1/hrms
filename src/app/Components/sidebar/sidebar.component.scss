@@ -1,0 +1,12 @@
+aside {
+  width: 4em;
+  background-color: #f4f4f4;
+  position: fixed;
+  height: calc(100vh - 4em);
+  top: 4em;
+  left: 0;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
