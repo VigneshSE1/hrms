@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32.1" height="32.1" viewBox="0 0 32.1 32.1">
+  <g id="excel" transform="translate(0.05 0.05)">
+    <g id="Layer_3" opacity="0">
+      <g id="Group_10980" data-name="Group 10980">
+        <g id="Group_10979" data-name="Group 10979">
+          <path id="Path_9087" data-name="Path 9087" d="M0,32V0H32V4.16" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.1"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_10983" data-name="Group 10983" transform="translate(-1804.363 -107)">
+      <g id="Group_10981" data-name="Group 10981" transform="translate(1810.363 110)">
+        <path id="Path_9088" data-name="Path 9088" d="M-10,0H1.175V21.386H-10Z" transform="translate(19.181 1.744)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+        <g id="Group_1373" data-name="Group 1373" transform="translate(12.324 9.4)">
+          <line id="Line_284" data-name="Line 284" x2="4.889" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="Line_285" data-name="Line 285" x2="4.889" transform="translate(0 3.314)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+          <line id="Line_286" data-name="Line 286" x2="4.889" transform="translate(0 6.629)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+      <path id="Path_5922" data-name="Path 5922" d="M0-1.134,9.181-5V20.429L0,16.563Z" transform="translate(1810.363 115)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+      <g id="Group_1372" data-name="Group 1372" transform="translate(1812.917 120.677)">
+        <line id="Line_282" data-name="Line 282" x1="4.074" y2="4.074" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+        <line id="Line_283" data-name="Line 283" x2="4.074" y2="4.074" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
