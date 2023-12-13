@@ -1,5 +1,21 @@
-<!-- sidebar.component.html -->
-
-<aside>
-  <!-- Your sidebar content goes here -->
+<aside
+  class="w-16 bg-gray-200 fixed h-screen top-16 left-0 border-r border-gray-300 overflow-y-auto rounded-tr-lg rounded-br-lg"
+>
+  <ul class="text-[#191919] mt-4">
+    <li *ngFor="let item of menuList; let i = index" class="pt-2">
+      <div
+        [routerLink]="item.label.toLowerCase() + '/' + (item?.subItem?.[0]?.link || '')"
+      >
+        <img
+          class="w-[4rem] h-auto hover:scale-150 transition-all duration-100 cursor-pointer"
+          [src]="
+            item.menuId === activeMenu.menuId
+              ? item.activeImageUrl
+              : item.imageUrl
+          "
+          [alt]="item.alt"
+        />
+      </div>
+    </li>
+  </ul>
 </aside>
