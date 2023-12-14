@@ -75,7 +75,7 @@
         id="bloodGroup"
         formControlName="bloodGroup"
       >
-        <option value="" disabled selected>Select Blood Group</option>
+        <option value="" disabled selected>Select</option>
         <option value="A+">A+</option>
         <option value="A-">A-</option>
         <option value="B+">B+</option>
@@ -157,18 +157,53 @@
       </div>
     </div>
     <div class="flex-column">
-      <label class="block mb-2 text-md text-gray-600" for="state"
-        >Country</label
-      >
+      <label class="block mb-2 text-md text-gray-600" for="state">State</label>
       <select
         class="w-96 rounded-md p-2 border border-gray-300 focus:outline-none"
         id="state"
         formControlName="state"
       >
-        <option value="" disabled selected>Select Country</option>
-        <option value="CA">California</option>
-        <option value="NY">New York</option>
+        <option value="" disabled selected>Select</option>
+        <option value="Ariyalur">Ariyalur</option>
+        <option value="Chengalpattu">Chengalpattu</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Coimbatore">Coimbatore</option>
+        <option value="Cuddalore">Cuddalore</option>
+        <option value="Dharmapuri">Dharmapuri</option>
+        <option value="Dindigul">Dindigul</option>
+        <option value="Erode">Erode</option>
+        <option value="Kallakurichi">Kallakurichi</option>
+        <option value="Kanchipuram">Kanchipuram</option>
+        <option value="Kanyakumari">Kanyakumari</option>
+        <option value="Karur">Karur</option>
+        <option value="Krishnagiri">Krishnagiri</option>
+        <option value="Madurai">Madurai</option>
+        <option value="Mayiladuthurai">Mayiladuthurai</option>
+        <option value="Nagapattinam">Nagapattinam</option>
+        <option value="Namakkal">Namakkal</option>
+        <option value="Nilgiris">Nilgiris</option>
+        <option value="Perambalur">Perambalur</option>
+        <option value="Pudukkottai">Pudukkottai</option>
+        <option value="Ramanathapuram">Ramanathapuram</option>
+        <option value="Ranipet">Ranipet</option>
+        <option value="Salem">Salem</option>
+        <option value="Sivaganga">Sivaganga</option>
+        <option value="Tenkasi">Tenkasi</option>
+        <option value="Thanjavur">Thanjavur</option>
+        <option value="Theni">Theni</option>
+        <option value="Thoothukudi">Thoothukudi</option>
+        <option value="Tiruchirappalli">Tiruchirappalli</option>
+        <option value="Tirunelveli">Tirunelveli</option>
+        <option value="Tirupathur">Tirupathur</option>
+        <option value="Tiruppur">Tiruppur</option>
+        <option value="Tiruvallur">Tiruvallur</option>
+        <option value="Tiruvannamalai">Tiruvannamalai</option>
+        <option value="Tiruvarur">Tiruvarur</option>
+        <option value="Vellore">Vellore</option>
+        <option value="Viluppuram">Viluppuram</option>
+        <option value="Virudhunagar">Virudhunagar</option>
       </select>
+
       <div
         *ngIf="submitted && formControls['state'].errors"
         class="invalid-feedback"
@@ -211,9 +246,7 @@
   </div>
 </form>
 
-<div
-  class="actions flex gap-4 text-lg justify-end p-4 absolute bottom-4 right-4 -z-10"
->
+<div class="actions flex gap-4 text-lg justify-end p-4">
   <a disabled class="opacity-50">< Previous</a>
   <a [routerLink]="['/information/competency']">Next ></a>
 </div>

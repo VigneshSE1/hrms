@@ -10,7 +10,7 @@ export class CompetencyComponent implements OnInit {
   competencyForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
-
+  submitted = false;
   ngOnInit() {
     this.competencyForm = this.fb.group({
       competencies: this.fb.array([this.createCompetency()]),
@@ -39,6 +39,7 @@ export class CompetencyComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
     if (this.competencyForm.valid) {
       // Implement what happens on form submission
       console.log(this.competencyForm.value); // Example: Log form values
