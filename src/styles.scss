@@ -1,2 +1,19 @@
 @tailwind base;
 @tailwind utilities;
+
+body {
+  background: #f7f7f7;
+}
+.main-container {
+  border-radius: 10px;
+  opacity: 0.5;
+  background: #fff;
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+    border-radius: 10px;
+border: 0.5px solid #dad3d3;
+background: #F7F7F7;
+}
+
