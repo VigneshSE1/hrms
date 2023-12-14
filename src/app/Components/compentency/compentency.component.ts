@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Gamification } from '@theproindia/pro-gamification';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-competency',
@@ -8,8 +10,9 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 })
 export class CompetencyComponent implements OnInit {
   competencyForm!: FormGroup;
+  gameConfigs = environment.gamification;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private gamification: Gamification) {}
   submitted = false;
   ngOnInit() {
     this.competencyForm = this.fb.group({
@@ -42,6 +45,12 @@ export class CompetencyComponent implements OnInit {
     this.submitted = true;
     if (this.competencyForm.valid) {
       // Implement what happens on form submission
+      this.gamification.updateGameAction(
+        this.gameConfigs.userId,
+        this.gameConfigs.workHistorySubmissionAction,
+        '',
+        ''
+      );
       console.log(this.competencyForm.value); // Example: Log form values
     } else {
       // Handle invalid form

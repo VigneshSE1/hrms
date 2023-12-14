@@ -14,6 +14,7 @@ import { WorkhistoryComponent } from './Components/workhistory/workhistory.compo
 import { WizardComponent } from './Components/wizard/wizard.component';
 import { InformationComponent } from './Components/information/information.component';
 import { LeavesComponent } from './Components/leaves/leaves.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,8 @@ import { LeavesComponent } from './Components/leaves/leaves.component';
     FormsModule,
     ReactiveFormsModule,
     ProGamificationModule.forRoot({
-      clientId: '5cbd3138-486b-4450-af1d-2318b516bdf4',
-      clientSecret: 'eIF8Q~KzFTkMRI6qCxGNqUZI5.UOO.KBlSpdxbSX',
+      clientId: environment.clientId,
+      clientSecret: environment.clientSecret,
     }),
   ],
   providers: [],

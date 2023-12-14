@@ -1,3 +1,4 @@
+import { environment } from '.././../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Gamification } from '@theproindia/pro-gamification';
@@ -10,6 +11,7 @@ import { Gamification } from '@theproindia/pro-gamification';
 export class WorkhistoryComponent implements OnInit {
   workHistoryForm!: FormGroup;
   isActive = false;
+  gameConfigs = environment.gamification;
   constructor(private fb: FormBuilder, private gamification: Gamification) {}
 
   ngOnInit() {
@@ -48,8 +50,8 @@ export class WorkhistoryComponent implements OnInit {
     if (this.workHistoryForm.valid) {
       console.log(this.workHistoryForm.value);
       this.gamification.updateGameAction(
-        '7a7dd0dd-4e38-46a1-ad20-19fa37ef46ec',
-        '65794c6e89dfc502b5423cda',
+        this.gameConfigs.userId,
+        this.gameConfigs.workHistorySubmissionAction,
         '',
         ''
       );
