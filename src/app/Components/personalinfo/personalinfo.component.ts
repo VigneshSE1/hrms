@@ -5,6 +5,8 @@ import {
   Validators,
   AbstractControl,
 } from '@angular/forms';
+import { Gamification } from '@theproindia/pro-gamification';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-personalinfo',
@@ -14,8 +16,10 @@ import {
 export class PersonalinfoComponent {
   myForm!: FormGroup;
   isActive = true;
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private gamification: Gamification) {}
   submitted = false;
+  gameConfigs = environment.gamification;
+
   ngOnInit() {
     this.myForm = this.fb.group({
       fullName: ['', Validators.required],
@@ -44,6 +48,12 @@ export class PersonalinfoComponent {
     if (this.myForm.invalid) {
       return;
     }
+    this.gamification.updateGameAction(
+      this.gameConfigs.userId,
+      this.gameConfigs.profileSubmissionAction,
+      '',
+      ''
+    );
     console.log(this.myForm?.value);
   }
 
