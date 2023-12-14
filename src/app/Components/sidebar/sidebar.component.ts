@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { sidebarMenuLists } from '../../Constants/sidebar-menu-list';
 import { MenuList } from '../../Models/sidebar-menu-list.model';
 import { LayoutService } from '../../Services/layout.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +10,7 @@ import { LayoutService } from '../../Services/layout.service';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
-  constructor(public layoutService: LayoutService) {}
+  constructor(public layoutService: LayoutService, public router: Router) {}
 
   menuList: MenuList[] = sidebarMenuLists as MenuList[];
   activeMenu!: MenuList;
@@ -18,5 +19,9 @@ export class SidebarComponent {
     this.layoutService.activeMainMenu$.subscribe((activeMenu: MenuList) => {
       this.activeMenu = activeMenu;
     });
+  }
+  navigateToPage(routerlink: MenuList, path: string) {
+    this.layoutService.activeMainMenu$.next(routerlink);
+    this.router.navigateByUrl(path);
   }
 }

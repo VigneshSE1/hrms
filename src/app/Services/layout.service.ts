@@ -8,6 +8,5 @@ import { MenuList, SubMenuList } from '../Models/sidebar-menu-list.model';
 })
 export class LayoutService {
   activeMainMenu$ = new BehaviorSubject<MenuList>(sidebarMenuLists[0]);
-  activeSubMenu$ = new BehaviorSubject<SubMenuList>({} as SubMenuList);
   constructor() {}
 }

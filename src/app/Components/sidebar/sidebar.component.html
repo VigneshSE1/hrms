@@ -4,7 +4,8 @@
   <ul class="text-[#191919] mt-4">
     <li *ngFor="let item of menuList; let i = index" class="p-5">
       <div
-        [routerLink]="item.label.toLowerCase() + '/' + (item?.subItem?.[0]?.link || '')"
+        (click)="navigateToPage(item, item.label.toLowerCase())"
+        [routerLink]="item.label.toLowerCase()"
       >
         <img
           class="w-[4rem] h-auto hover:scale-150 transition-all duration-100 cursor-pointer"
