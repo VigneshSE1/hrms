@@ -1,0 +1,16 @@
+.flex-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.flex-column {
+  flex: 1;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}

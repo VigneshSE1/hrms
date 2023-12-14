@@ -1,102 +1,138 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-  <label for="fullName">Full Name</label>
-  <input type="text" id="fullName" formControlName="fullName" />
-  <div *ngIf="myForm.get('fullName').invalid && myForm.get('fullName').touched">
-    <span *ngIf="myForm.get('fullName').hasError('required')"
-      >Full Name is required</span
-    >
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="flex-form">
+  <div>Personal Information</div>
+
+  <div class="flex-row">
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="fullName"
+        >Full Name</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="text"
+        id="fullName"
+        placeholder="Full Name"
+        formControlName="fullName"
+      />
+    </div>
+    <div class="flex-column">
+      <label for="dob" class="block mb-2 text-md text-gray-600"
+        >Date of Birth</label
+      >
+      <input
+        type="date"
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        id="dob"
+        formControlName="dob"
+      />
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="fathersName"
+        >Father's Name</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="text"
+        placeholder="Father's Name"
+        id="fathersName"
+        formControlName="fathersName"
+      />
+    </div>
   </div>
 
-  <label for="dob">Date of Birth</label>
-  <input type="date" id="dob" formControlName="dob" />
-  <div *ngIf="myForm.get('dob').invalid && myForm.get('dob').touched">
-    <span *ngIf="myForm.get('dob').hasError('required')"
-      >Date of Birth is required</span
-    >
-    <!-- You can add custom date validation messages here -->
+  <div class="flex-row">
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="bloodGroup"
+        >Blood Group</label
+      >
+      <select
+        class="w-96 rounded-md p-2 border border-gray-300 focus:outline-none"
+        id="bloodGroup"
+        formControlName="bloodGroup"
+      >
+        <option value="" disabled selected>Select Blood Group</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="personalEmail"
+        >Personal Email</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="email"
+        id="personalEmail"
+        placeholder="Personal Email"
+        formControlName="personalEmail"
+      />
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="personalMobileNumber"
+        >Personal Mobile Number</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="tel"
+        id="personalMobileNumber"
+        placeholder="Mobile Number"
+        formControlName="personalMobileNumber"
+      />
+    </div>
   </div>
 
-  <label for="fathersName">Father's Name</label>
-  <input type="text" id="fathersName" formControlName="fathersName" />
-  <div
-    *ngIf="
-      myForm.get('fathersName').invalid && myForm.get('fathersName').touched
-    "
-  >
-    <span *ngIf="myForm.get('fathersName').hasError('required')"
-      >Father's Name is required</span
-    >
+  <div class="flex-row">
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="contactAddress"
+        >Contact Address</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        id="contactAddress"
+        placeholder="Contact Address"
+        formControlName="contactAddress"
+      />
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="state"
+        >Country</label
+      >
+      <select
+        class="w-96 rounded-md p-2 border border-gray-300 focus:outline-none"
+        id="state"
+        formControlName="state"
+      >
+        <option value="" disabled selected>Select Country</option>
+        <option value="CA">California</option>
+        <option value="NY">New York</option>
+      </select>
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="pincode"
+        >Pincode</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="text"
+        id="pincode"
+        placeholder="Pincode"
+        formControlName="pincode"
+      />
+    </div>
   </div>
 
-  <label for="bloodGroup">Blood Group</label>
-  <input type="text" id="bloodGroup" formControlName="bloodGroup" />
-
-  <label for="personalEmail">Personal Email</label>
-  <input type="email" id="personalEmail" formControlName="personalEmail" />
-  <div
-    *ngIf="
-      myForm.get('personalEmail').invalid && myForm.get('personalEmail').touched
-    "
-  >
-    <span *ngIf="myForm.get('personalEmail').hasError('required')"
-      >Personal Email is required</span
+  <div class="flex justify-center items-center">
+    <button
+      class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
+      type="submit"
+      [disabled]="myForm.invalid"
     >
-    <span *ngIf="myForm.get('personalEmail').hasError('email')"
-      >Invalid email format</span
-    >
+      Submit
+    </button>
   </div>
-
-  <label for="personalMobileNumber">Personal Mobile Number</label>
-  <input
-    type="tel"
-    id="personalMobileNumber"
-    formControlName="personalMobileNumber"
-  />
-  <div
-    *ngIf="
-      myForm.get('personalMobileNumber').invalid &&
-      myForm.get('personalMobileNumber').touched
-    "
-  >
-    <span *ngIf="myForm.get('personalMobileNumber').hasError('required')"
-      >Mobile Number is required</span
-    >
-    <span *ngIf="myForm.get('personalMobileNumber').hasError('pattern')"
-      >Invalid mobile number format</span
-    >
-  </div>
-
-  <label for="contactAddress">Contact Address</label>
-  <textarea id="contactAddress" formControlName="contactAddress"></textarea>
-  <div
-    *ngIf="
-      myForm.get('contactAddress').invalid &&
-      myForm.get('contactAddress').touched
-    "
-  >
-    <span *ngIf="myForm.get('contactAddress').hasError('required')"
-      >Contact Address is required</span
-    >
-  </div>
-
-  <label for="state">State</label>
-  <input type="text" id="state" formControlName="state" />
-  <div *ngIf="myForm.get('state').invalid && myForm.get('state').touched">
-    <span *ngIf="myForm.get('state').hasError('required')"
-      >State is required</span
-    >
-  </div>
-
-  <label for="pincode">Pincode</label>
-  <input type="text" id="pincode" formControlName="pincode" />
-  <div *ngIf="myForm.get('pincode').invalid && myForm.get('pincode').touched">
-    <span *ngIf="myForm.get('pincode').hasError('required')"
-      >Pincode is required</span
-    >
-    <span *ngIf="myForm.get('pincode').hasError('pattern')"
-      >Invalid pincode format</span
-    >
-  </div>
-
-  <button type="submit" [disabled]="myForm.invalid">Submit</button>
 </form>

@@ -11,9 +11,9 @@
       <div [ngClass]="{ open: sidebarVisible }" class="sidebar text-left pt-12">
         <app-sidebar></app-sidebar>
       </div>
-      <div class="flex flex-col flex-1 mx-5 overflow-auto">
+      <div class="flex flex-col flex-1 mx-5 overflow-auto mt-20 ml-20">
         <main class="flex-1">
-          <router-outlet></router-outlet>
+          <router-outlet><app-personalinfo></app-personalinfo></router-outlet>
         </main>
       </div>
     </div>
