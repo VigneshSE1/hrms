@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './Components/layout/layout.component';
 import { PersonalinfoComponent } from './Components/personalinfo/personalinfo.component';
 import { CompetencyComponent } from './Components/compentency/compentency.component';
 import { WorkhistoryComponent } from './Components/workhistory/workhistory.component';
 import { InformationComponent } from './Components/information/information.component';
+import { LeavesComponent } from './Components/leaves/leaves.component';
 
 const routes: Routes = [
   {
@@ -17,6 +17,10 @@ const routes: Routes = [
       // Other child routes
       { path: '', redirectTo: 'personal-info', pathMatch: 'full' }, // Redirect to default child route
     ],
+  },
+  {
+    path: 'leaves',
+    component: LeavesComponent,
   },
   { path: '', redirectTo: 'information', pathMatch: 'full' }, // Redirect to default path
   { path: '**', component: PersonalinfoComponent }, // Redirect to a 404 Not Found page for unmatched routes
