@@ -10,6 +10,8 @@ import { PersonalinfoComponent } from './Components/personalinfo/personalinfo.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompetencyComponent } from './Components/compentency/compentency.component';
 import { WorkhistoryComponent } from './Components/workhistory/workhistory.component';
+import { WizardComponent } from './Components/wizard/wizard.component';
+import { InformationComponent } from './Components/information/information.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { WorkhistoryComponent } from './Components/workhistory/workhistory.compo
     PersonalinfoComponent,
     CompetencyComponent,
     WorkhistoryComponent,
+    WizardComponent,
+    InformationComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
