@@ -1,8 +1,8 @@
 <aside
-  class="w-16 bg-gray-200 fixed h-screen top-16 left-0 border-r border-gray-300 overflow-y-auto rounded-tr-lg rounded-br-lg"
+  class="w-20 bg-[#2C8ACE] fixed h-screen top-16 left-0 border-r border-gray-300 overflow-y-auto rounded-tr-lg rounded-br-lg"
 >
   <ul class="text-[#191919] mt-4">
-    <li *ngFor="let item of menuList; let i = index" class="pt-2">
+    <li *ngFor="let item of menuList; let i = index" class="p-5">
       <div
         [routerLink]="item.label.toLowerCase() + '/' + (item?.subItem?.[0]?.link || '')"
       >
