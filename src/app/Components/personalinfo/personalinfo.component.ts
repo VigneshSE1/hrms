@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-personalinfo',
   templateUrl: './personalinfo.component.html',
-  styleUrls: ['./personalinfo.component.css'],
+  styleUrls: ['./personalinfo.component.scss'],
 })
 export class PersonalinfoComponent implements OnInit {
   myForm!: FormGroup;
