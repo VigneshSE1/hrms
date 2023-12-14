@@ -1,0 +1,219 @@
+<app-wizard></app-wizard>
+<form [formGroup]="myForm" class="flex-form">
+  <div>Personal Information</div>
+
+  <div class="flex-row">
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="fullName"
+        >Full Name</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="text"
+        id="fullName"
+        placeholder="Full Name"
+        formControlName="fullName"
+      />
+      <div
+        *ngIf="submitted && formControls['fullName'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['fullName'].errors['required']">
+          Name is required
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-column">
+      <label for="dob" class="block mb-2 text-md text-gray-600"
+        >Date of Birth</label
+      >
+      <input
+        type="date"
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        id="dob"
+        formControlName="dob"
+      />
+      <div
+        *ngIf="submitted && formControls['dob'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['dob'].errors['required']">
+          DOB is required
+        </div>
+      </div>
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="fathersName"
+        >Father's Name</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="text"
+        placeholder="Father's Name"
+        id="fathersName"
+        formControlName="fathersName"
+      />
+      <div
+        *ngIf="submitted && formControls['fathersName'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['fathersName'].errors['required']">
+          Father's Name is required
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-row">
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="bloodGroup"
+        >Blood Group</label
+      >
+      <select
+        class="w-96 rounded-md p-2 border border-gray-300 focus:outline-none"
+        id="bloodGroup"
+        formControlName="bloodGroup"
+      >
+        <option value="" disabled selected>Select Blood Group</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+      </select>
+      <div
+        *ngIf="submitted && formControls['bloodGroup'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['bloodGroup'].errors['required']">
+          Blood Group is required
+        </div>
+      </div>
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="personalEmail"
+        >Personal Email</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="email"
+        id="personalEmail"
+        placeholder="Personal Email"
+        formControlName="personalEmail"
+      />
+      <div
+        *ngIf="submitted && formControls['personalEmail'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['personalEmail'].errors['required']">
+          Email is required
+        </div>
+      </div>
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="personalMobileNumber"
+        >Personal Mobile Number</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="tel"
+        id="personalMobileNumber"
+        placeholder="Mobile Number"
+        formControlName="personalMobileNumber"
+      />
+      <div
+        *ngIf="submitted && formControls['personalMobileNumber'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['personalMobileNumber'].errors['required']">
+          Mobile Number is required
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-row">
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="contactAddress"
+        >Contact Address</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        id="contactAddress"
+        placeholder="Contact Address"
+        formControlName="contactAddress"
+      />
+      <div
+        *ngIf="submitted && formControls['contactAddress'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['contactAddress'].errors['required']">
+          Contact Address is required
+        </div>
+      </div>
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="state"
+        >Country</label
+      >
+      <select
+        class="w-96 rounded-md p-2 border border-gray-300 focus:outline-none"
+        id="state"
+        formControlName="state"
+      >
+        <option value="" disabled selected>Select Country</option>
+        <option value="CA">California</option>
+        <option value="NY">New York</option>
+      </select>
+      <div
+        *ngIf="submitted && formControls['state'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['state'].errors['required']">
+          Country is required
+        </div>
+      </div>
+    </div>
+    <div class="flex-column">
+      <label class="block mb-2 text-md text-gray-600" for="pincode"
+        >Pincode</label
+      >
+      <input
+        class="w-96 rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+        type="text"
+        id="pincode"
+        placeholder="Pincode"
+        formControlName="pincode"
+      />
+      <div
+        *ngIf="submitted && formControls['pincode'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['pincode'].errors['required']">
+          Pincode is required
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex justify-center cursor-pointer items-center">
+    <button
+      class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
+      type="submit"
+      (click)="onSubmit()"
+    >
+      Update
+    </button>
+  </div>
+</form>
+
+<div
+  class="actions flex gap-4 text-lg justify-end p-4 absolute bottom-4 right-4"
+>
+  <a disabled class="opacity-50">< Previous</a>
+  <a [routerLink]="['/information/competency']">Next ></a>
+</div>
