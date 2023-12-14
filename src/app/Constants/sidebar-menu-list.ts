@@ -5,7 +5,7 @@ export const sidebarMenuLists: MenuList[] = [
     menuId: MainMenu.Info,
     label: 'information',
     imageUrl: '../assets/images/home.svg',
-    activeImageUrl: '../assets/images/onboarding 1.svg',
+    activeImageUrl: '../assets/images/home.svg',
     alt: 'Home',
     isActive: false,
     subItem: [],
