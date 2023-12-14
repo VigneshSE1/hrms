@@ -16,10 +16,13 @@
     </div>
   </div>
 </div>
-
 <div class="flex-1 h-[80%] w-[80%] ml-[10%] my-5 main-container">
   <app-wizard></app-wizard>
-  <form [formGroup]="workHistoryForm" (ngSubmit)="onSubmit()" class="flex-form">
+  <form
+    [formGroup]="workHistoryForm"
+    (ngSubmit)="onSubmit()"
+    class="flex-form m-14"
+  >
     <div formArrayName="workHistoryItems">
       <div
         *ngFor="let workHistory of workHistoryItems.controls; let i = index"
@@ -27,7 +30,9 @@
         class="flex-row"
       >
         <div class="flex justify-between w-full">
-          <div class="w-1/4 pr-4">
+          <!-- First Column -->
+          <div class="w-1/2 pr-4">
+            <!-- Company Name Input -->
             <label for="companyName" class="block mb-2 text-md text-gray-400"
               >Company Name</label
             >
@@ -51,7 +56,9 @@
             </div>
           </div>
 
-          <div class="w-1/4 pr-4">
+          <!-- Second Column -->
+          <div class="w-1/2">
+            <!-- Duration From Input -->
             <label for="durationFrom" class="block mb-2 text-md text-gray-400"
               >Duration From</label
             >
@@ -75,8 +82,13 @@
               <!-- Add other validation messages for durationFrom if needed -->
             </div>
           </div>
+        </div>
 
-          <div class="w-1/4 pr-4">
+        <!-- Second Row -->
+        <div class="flex justify-between w-full mt-4">
+          <!-- Third Column -->
+          <div class="w-1/2 pr-4">
+            <!-- Duration To Input -->
             <label for="durationTo" class="block mb-2 text-md text-gray-400"
               >Duration To</label
             >
@@ -100,7 +112,9 @@
             </div>
           </div>
 
-          <div class="w-1/4">
+          <!-- Fourth Column -->
+          <div class="w-1/2">
+            <!-- Relieving Certificate Input -->
             <label
               for="relievingCertificate"
               class="block mb-2 text-md text-gray-400"
@@ -148,7 +162,7 @@
     </div>
   </form>
   <div class="actions flex gap-4 text-lg justify-end p-4">
-    <a [routerLink]="['/information/competency']">< Previous</a>
-    <a disabled class="opacity-50" target="_blank">Next ></a>
+    <a [routerLink]="['/information/competency']">&lt; Previous</a>
+    <a disabled class="opacity-50" target="_blank">Next &gt;</a>
   </div>
 </div>
