@@ -13,7 +13,7 @@ import {
 })
 export class PersonalinfoComponent {
   myForm!: FormGroup;
-
+  isActive = true;
   constructor(private fb: FormBuilder) {}
   submitted = false;
   ngOnInit() {
@@ -45,5 +45,9 @@ export class PersonalinfoComponent {
       return;
     }
     console.log(this.myForm?.value);
+  }
+
+  hidePopup() {
+    this.isActive = false;
   }
 }

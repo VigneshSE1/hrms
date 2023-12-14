@@ -1,11 +1,28 @@
+<div *ngIf="isActive" class="modal-wrap">
+  <div class="modal-content text-center">
+    <div class="text-2xl  my-4">Help us know you better!</div>
+    <div class="text-base">
+      Complete onboarding process within 2 days and earn
+      <span class="text-orange-600">50 points </span>for each step!
+    </div>
+    <div class="flex justify-center items-center my-4">
+      <button
+        (click)="hidePopup()"
+        class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
+      >
+        Start
+      </button>
+    </div>
+  </div>
+</div>
+
 <div class="flex-1 h-[80%] w-[80%] ml-[10%] my-5 main-container">
   <app-wizard></app-wizard>
+  <!-- <div>Personal Information</div> -->
   <form [formGroup]="myForm" class="flex-form">
-    <div>Personal Information</div>
-
     <div class="flex-row">
       <div class="flex-column">
-        <label class="block mb-2 text-md text-gray-600" for="fullName"
+        <label class="block mb-2 text-md text-gray-400" for="fullName"
           >Full Name</label
         >
         <input
@@ -26,7 +43,7 @@
       </div>
 
       <div class="flex-column">
-        <label for="dob" class="block mb-2 text-md text-gray-600"
+        <label for="dob" class="block mb-2 text-md text-gray-400"
           >Date of Birth</label
         >
         <input
@@ -45,7 +62,7 @@
         </div>
       </div>
       <div class="flex-column">
-        <label class="block mb-2 text-md text-gray-600" for="fathersName"
+        <label class="block mb-2 text-md text-gray-400" for="fathersName"
           >Father's Name</label
         >
         <input
@@ -68,7 +85,7 @@
 
     <div class="flex-row">
       <div class="flex-column">
-        <label class="block mb-2 text-md text-gray-600" for="bloodGroup"
+        <label class="block mb-2 text-md text-gray-400" for="bloodGroup"
           >Blood Group</label
         >
         <select
@@ -96,7 +113,7 @@
         </div>
       </div>
       <div class="flex-column">
-        <label class="block mb-2 text-md text-gray-600" for="personalEmail"
+        <label class="block mb-2 text-md text-gray-400" for="personalEmail"
           >Personal Email</label
         >
         <input
@@ -117,7 +134,7 @@
       </div>
       <div class="flex-column">
         <label
-          class="block mb-2 text-md text-gray-600"
+          class="block mb-2 text-md text-gray-400"
           for="personalMobileNumber"
           >Personal Mobile Number</label
         >
@@ -141,7 +158,7 @@
 
     <div class="flex-row">
       <div class="flex-column">
-        <label class="block mb-2 text-md text-gray-600" for="contactAddress"
+        <label class="block mb-2 text-md text-gray-400" for="contactAddress"
           >Contact Address</label
         >
         <input
@@ -160,7 +177,7 @@
         </div>
       </div>
       <div class="flex-column">
-        <label class="block mb-2 text-md text-gray-600" for="state"
+        <label class="block mb-2 text-md text-gray-400" for="state"
           >State</label
         >
         <select
@@ -219,7 +236,7 @@
         </div>
       </div>
       <div class="flex-column">
-        <label class="block mb-2 text-md text-gray-600" for="pincode"
+        <label class="block mb-2 text-md text-gray-400" for="pincode"
           >Pincode</label
         >
         <input
