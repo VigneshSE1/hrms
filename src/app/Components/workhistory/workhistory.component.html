@@ -5,10 +5,11 @@
         src="../../../assets/images/close.svg"
         class="cursor-pointer"
         (click)="togglePopup()"
+        alt="closeIcon"
       />
     </div>
     <div class="flex justify-center">
-      <img src="../../../assets/images/congragulations.svg" />
+      <img src="../../../assets/images/congragulations.svg" alt="popup" />
     </div>
     <div class="text-2xl my-4">Congratulations!</div>
     <div class="text-base mb-5">
@@ -16,7 +17,7 @@
     </div>
   </div>
 </div>
-<div class="flex-1 h-[80%] w-[80%] ml-[10%] my-5 main-container">
+<div class="flex-1 h-[80%] w-[80%] ml-[10%] my-2 main-container">
   <app-wizard></app-wizard>
   <form
     [formGroup]="workHistoryForm"
@@ -161,7 +162,7 @@
       </button>
     </div>
   </form>
-  <div class="actions flex gap-4 text-lg justify-end p-4">
+  <div class="actions flex gap-4 text-lg justify-end p-1">
     <a [routerLink]="['/information/competency']">&lt; Previous</a>
     <a disabled class="opacity-50" target="_blank">Next &gt;</a>
   </div>
