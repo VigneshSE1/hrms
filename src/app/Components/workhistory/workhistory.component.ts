@@ -2,6 +2,7 @@ import { environment } from '.././../../environments/environment';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Gamification } from '@theproindia/pro-gamification';
+import { Form } from '../enum/form.enum';
 
 @Component({
   selector: 'app-workhistory',
@@ -12,12 +13,16 @@ export class WorkhistoryComponent implements OnInit {
   workHistoryForm!: FormGroup;
   isActive = false;
   gameConfigs = environment.gamification;
+  workHistory = sessionStorage.getItem(Form.WORK_HISTORY);
+
   constructor(private fb: FormBuilder, private gamification: Gamification) {}
 
   ngOnInit() {
     this.workHistoryForm = this.fb.group({
       workHistoryItems: this.fb.array([this.createWorkHistory()]),
     });
+    this.workHistory &&
+      this.workHistoryForm.setValue(JSON.parse(this.workHistory || '{}'));
   }
 
   createWorkHistory(): FormGroup {
@@ -54,6 +59,10 @@ export class WorkhistoryComponent implements OnInit {
         this.gameConfigs.workHistorySubmissionAction,
         '',
         ''
+      );
+      sessionStorage.setItem(
+        Form.WORK_HISTORY,
+        JSON.stringify(this.workHistoryForm?.value)
       );
     } else {
       console.log('Form is invalid');

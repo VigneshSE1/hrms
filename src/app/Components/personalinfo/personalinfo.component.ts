@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Gamification } from '@theproindia/pro-gamification';
 import { environment } from '../../../environments/environment';
+import { Form } from '../enum/form.enum';
 
 @Component({
   selector: 'app-personalinfo',
@@ -15,11 +16,11 @@ import { environment } from '../../../environments/environment';
 })
 export class PersonalinfoComponent {
   myForm!: FormGroup;
-  isActive = true;
+  isActive = false;
   constructor(private fb: FormBuilder, private gamification: Gamification) {}
   submitted = false;
   gameConfigs = environment.gamification;
-
+  personalInfo = sessionStorage.getItem(Form.PERSONAL_INFO_FORM);
   ngOnInit() {
     this.myForm = this.fb.group({
       fullName: ['', Validators.required],
@@ -38,6 +39,9 @@ export class PersonalinfoComponent {
         [Validators.required, Validators.pattern('^[1-9][0-9]{5}$')],
       ],
     });
+    !this.personalInfo && (this.isActive = true);
+    this.personalInfo &&
+      this.myForm.setValue(JSON.parse(this.personalInfo || '{}'));
   }
   get formControls(): { [key: string]: AbstractControl } {
     return this.myForm.controls;
@@ -53,6 +57,10 @@ export class PersonalinfoComponent {
       this.gameConfigs.profileSubmissionAction,
       '',
       ''
+    );
+    sessionStorage.setItem(
+      Form.PERSONAL_INFO_FORM,
+      JSON.stringify(this.myForm?.value)
     );
     console.log(this.myForm?.value);
   }
