@@ -32,8 +32,8 @@ import { InformationComponent } from './Components/information/information.compo
     FormsModule,
     ReactiveFormsModule,
     ProGamificationModule.forRoot({
-      clientId: 'f9f95520-89d4-43b0-a326-affe40ff27f1',
-      clientSecret: 'pon8Q~dc-.o1wk~arnP6r9r3Zq8ls2emlMY1JbrW',
+      clientId: '5cbd3138-486b-4450-af1d-2318b516bdf4',
+      clientSecret: 'eIF8Q~KzFTkMRI6qCxGNqUZI5.UOO.KBlSpdxbSX',
     }),
   ],
   providers: [],

@@ -10,6 +10,9 @@ module.exports = {
         secondary: "#f0f0f0",
         backgroundGray: "#f7f7f7",
       },
+      fontFamily: {
+        poppins: ["'Poppins'", "sans-serif"],
+      },
     },
     screens: {
       sm: "520px",

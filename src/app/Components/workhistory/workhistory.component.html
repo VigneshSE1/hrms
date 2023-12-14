@@ -120,13 +120,14 @@
       class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
       type="submit"
       [disabled]="workHistoryForm.invalid"
+      (click)="onSubmit()"
     >
       Update
     </button>
   </div>
 </form>
 <div
-  class="actions flex gap-4 text-lg justify-end p-4 absolute bottom-4 right-4"
+  class="actions flex gap-4 text-lg justify-end p-4 absolute bottom-4 right-4 -z-10"
 >
   <a [routerLink]="['/information/competency']">< Previous</a>
   <a disabled class="opacity-50" target="_blank">Next ></a>
