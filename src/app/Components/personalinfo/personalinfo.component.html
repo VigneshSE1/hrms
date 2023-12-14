@@ -1,0 +1,102 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label for="fullName">Full Name</label>
+  <input type="text" id="fullName" formControlName="fullName" />
+  <div *ngIf="myForm.get('fullName').invalid && myForm.get('fullName').touched">
+    <span *ngIf="myForm.get('fullName').hasError('required')"
+      >Full Name is required</span
+    >
+  </div>
+
+  <label for="dob">Date of Birth</label>
+  <input type="date" id="dob" formControlName="dob" />
+  <div *ngIf="myForm.get('dob').invalid && myForm.get('dob').touched">
+    <span *ngIf="myForm.get('dob').hasError('required')"
+      >Date of Birth is required</span
+    >
+    <!-- You can add custom date validation messages here -->
+  </div>
+
+  <label for="fathersName">Father's Name</label>
+  <input type="text" id="fathersName" formControlName="fathersName" />
+  <div
+    *ngIf="
+      myForm.get('fathersName').invalid && myForm.get('fathersName').touched
+    "
+  >
+    <span *ngIf="myForm.get('fathersName').hasError('required')"
+      >Father's Name is required</span
+    >
+  </div>
+
+  <label for="bloodGroup">Blood Group</label>
+  <input type="text" id="bloodGroup" formControlName="bloodGroup" />
+
+  <label for="personalEmail">Personal Email</label>
+  <input type="email" id="personalEmail" formControlName="personalEmail" />
+  <div
+    *ngIf="
+      myForm.get('personalEmail').invalid && myForm.get('personalEmail').touched
+    "
+  >
+    <span *ngIf="myForm.get('personalEmail').hasError('required')"
+      >Personal Email is required</span
+    >
+    <span *ngIf="myForm.get('personalEmail').hasError('email')"
+      >Invalid email format</span
+    >
+  </div>
+
+  <label for="personalMobileNumber">Personal Mobile Number</label>
+  <input
+    type="tel"
+    id="personalMobileNumber"
+    formControlName="personalMobileNumber"
+  />
+  <div
+    *ngIf="
+      myForm.get('personalMobileNumber').invalid &&
+      myForm.get('personalMobileNumber').touched
+    "
+  >
+    <span *ngIf="myForm.get('personalMobileNumber').hasError('required')"
+      >Mobile Number is required</span
+    >
+    <span *ngIf="myForm.get('personalMobileNumber').hasError('pattern')"
+      >Invalid mobile number format</span
+    >
+  </div>
+
+  <label for="contactAddress">Contact Address</label>
+  <textarea id="contactAddress" formControlName="contactAddress"></textarea>
+  <div
+    *ngIf="
+      myForm.get('contactAddress').invalid &&
+      myForm.get('contactAddress').touched
+    "
+  >
+    <span *ngIf="myForm.get('contactAddress').hasError('required')"
+      >Contact Address is required</span
+    >
+  </div>
+
+  <label for="state">State</label>
+  <input type="text" id="state" formControlName="state" />
+  <div *ngIf="myForm.get('state').invalid && myForm.get('state').touched">
+    <span *ngIf="myForm.get('state').hasError('required')"
+      >State is required</span
+    >
+  </div>
+
+  <label for="pincode">Pincode</label>
+  <input type="text" id="pincode" formControlName="pincode" />
+  <div *ngIf="myForm.get('pincode').invalid && myForm.get('pincode').touched">
+    <span *ngIf="myForm.get('pincode').hasError('required')"
+      >Pincode is required</span
+    >
+    <span *ngIf="myForm.get('pincode').hasError('pattern')"
+      >Invalid pincode format</span
+    >
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
