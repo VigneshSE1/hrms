@@ -1,6 +1,6 @@
 <div class="flex-1 h-[80%] w-[80%] ml-[10%] my-5 main-container">
   <app-wizard></app-wizard>
-  <form [formGroup]="competencyForm" (ngSubmit)="onSubmit()" class="flex-form">
+  <form [formGroup]="competencyForm" (ngSubmit)="onSubmit()" class="flex-form m-14">
     <div formArrayName="competencies">
       <div
         *ngFor="let competency of competencies.controls; let i = index"
@@ -8,7 +8,7 @@
         class="flex-row"
       >
         <div class="flex justify-between w-full">
-          <div class="w-1/4 pr-4">
+          <div class="w-1/2 pr-4">
             <label for="courseName" class="block mb-2 text-md text-gray-400"
               >Course Name</label
             >
@@ -32,7 +32,7 @@
             </div>
           </div>
 
-          <div class="w-1/4 pr-4">
+          <div class="w-1/2">
             <label for="durationFrom" class="block mb-2 text-md text-gray-400"
               >Duration From</label
             >
@@ -52,11 +52,11 @@
               <span *ngIf="competency.get('durationFrom')?.hasError('required')"
                 >Duration From is required</span
               >
-              <!-- Add other validation messages for durationFrom if needed -->
             </div>
           </div>
-
-          <div class="w-1/4 pr-4">
+        </div>
+        <div class="flex justify-between w-full mt-4">
+          <div class="w-1/2 pr-4">
             <label for="durationTo" class="block mb-2 text-md text-gray-400"
               >Duration To</label
             >
@@ -76,11 +76,9 @@
               <span *ngIf="competency.get('durationTo')?.hasError('required')"
                 >Duration To is required</span
               >
-              <!-- Add other validation messages for durationTo if needed -->
             </div>
           </div>
-
-          <div class="w-1/4">
+          <div class="w-1/2">
             <label for="certificate" class="block mb-2 text-md text-gray-400"
               >Upload Certificate</label
             >
@@ -123,7 +121,7 @@
     </div>
   </form>
   <div class="actions flex gap-4 text-lg justify-end p-4">
-    <a [routerLink]="['/information/personal-info']">< Previous</a>
-    <a [routerLink]="['/information/work-history']">Next ></a>
+    <a [routerLink]="['/information/personal-info']">&lt; Previous</a>
+    <a [routerLink]="['/information/work-history']">Next &gt;</a>
   </div>
 </div>

@@ -61,7 +61,6 @@ export class CompetencyComponent implements OnInit {
       );
       console.log(this.competencyForm.value); // Example: Log form values
     } else {
-      // Handle invalid form
       console.log('Form is invalid');
     }
   }
