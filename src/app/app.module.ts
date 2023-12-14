@@ -8,6 +8,8 @@ import { SidebarComponent } from './Components/sidebar/sidebar.component';
 import { LayoutComponent } from './Components/layout/layout.component';
 import { PersonalinfoComponent } from './Components/personalinfo/personalinfo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CompetencyComponent } from './Components/compentency/compentency.component';
+import { WorkhistoryComponent } from './Components/workhistory/workhistory.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     LayoutComponent,
     PersonalinfoComponent,
+    CompetencyComponent,
+    WorkhistoryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],

@@ -1,0 +1,64 @@
+<form [formGroup]="competencyForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="competencies">
+    <div
+      *ngFor="let competency of competencies.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <label for="courseName">Course Name</label>
+      <input type="text" id="courseName" formControlName="courseName" />
+      <div
+        *ngIf="
+          competency.get('courseName')?.invalid &&
+          competency.get('courseName')?.touched
+        "
+      >
+        <span *ngIf="competency.get('courseName')?.hasError('required')"
+          >Course Name is required</span
+        >
+      </div>
+
+      <label for="durationFrom">Duration From</label>
+      <input type="date" id="durationFrom" formControlName="durationFrom" />
+      <div
+        *ngIf="
+          competency.get('durationFrom')?.invalid &&
+          competency.get('durationFrom')?.touched
+        "
+      >
+        <span *ngIf="competency.get('durationFrom')?.hasError('required')"
+          >Duration From is required</span
+        >
+        <!-- Add other validation messages for durationFrom if needed -->
+      </div>
+
+      <label for="durationTo">Duration To</label>
+      <input type="date" id="durationTo" formControlName="durationTo" />
+      <div
+        *ngIf="
+          competency.get('durationTo')?.invalid &&
+          competency.get('durationTo')?.touched
+        "
+      >
+        <span *ngIf="competency.get('durationTo')?.hasError('required')"
+          >Duration To is required</span
+        >
+        <!-- Add other validation messages for durationTo if needed -->
+      </div>
+
+      <label for="certificate">Upload Certificate</label>
+      <input type="file" id="certificate" formControlName="certificate" />
+
+      <button
+        type="button"
+        (click)="removeCompetency(i)"
+        *ngIf="competencies.length > 1"
+      >
+        Remove
+      </button>
+      <hr *ngIf="i !== competencies.length - 1" />
+    </div>
+  </div>
+
+  <button type="button" (click)="addCompetency()">Add Competency</button>
+  <button type="submit" [disabled]="competencyForm.invalid">Submit</button>
+</form>

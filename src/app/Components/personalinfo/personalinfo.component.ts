@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-personalinfo',
   templateUrl: './personalinfo.component.html',
-  styleUrls: ['./personalinfo.component.css'],
+  styleUrls: ['./personalinfo.component.scss'],
 })
-export class PersonalinfoComponent implements OnInit {
+export class PersonalinfoComponent {
   myForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -14,16 +14,27 @@ export class PersonalinfoComponent implements OnInit {
   ngOnInit() {
     this.myForm = this.fb.group({
       fullName: ['', Validators.required],
-      // Define other form controls here following the same pattern
+      dob: ['', Validators.required],
+      fathersName: ['', Validators.required],
+      bloodGroup: [''],
+      personalEmail: ['', [Validators.required, Validators.email]],
+      personalMobileNumber: [
+        '',
+        [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')],
+      ],
+      contactAddress: ['', Validators.required],
+      state: ['', Validators.required],
+      pincode: [
+        '',
+        [Validators.required, Validators.pattern('^[1-9][0-9]{5}$')],
+      ],
     });
   }
 
   onSubmit() {
     if (this.myForm.valid) {
-      // Implement what happens on form submission
       console.log(this.myForm.value); // Example: Log form values
     } else {
-      // Handle invalid form
       console.log('Form is invalid');
     }
   }

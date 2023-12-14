@@ -1,0 +1,68 @@
+<form [formGroup]="workHistoryForm" (ngSubmit)="onSubmit()">
+  <div formArrayName="workHistoryItems">
+    <div
+      *ngFor="let workHistory of workHistoryItems.controls; let i = index"
+      [formGroupName]="i"
+    >
+      <label for="companyName">Company Name</label>
+      <input type="text" id="companyName" formControlName="companyName" />
+      <div
+        *ngIf="
+          workHistory.get('companyName')?.invalid &&
+          workHistory.get('companyName')?.touched
+        "
+      >
+        <span *ngIf="workHistory.get('companyName')?.hasError('required')"
+          >Company Name is required</span
+        >
+      </div>
+
+      <label for="durationFrom">Duration From</label>
+      <input type="date" id="durationFrom" formControlName="durationFrom" />
+      <div
+        *ngIf="
+          workHistory.get('durationFrom')?.invalid &&
+          workHistory.get('durationFrom')?.touched
+        "
+      >
+        <span *ngIf="workHistory.get('durationFrom')?.hasError('required')"
+          >Duration From is required</span
+        >
+        <!-- Add other validation messages for durationFrom if needed -->
+      </div>
+
+      <label for="durationTo">Duration To</label>
+      <input type="date" id="durationTo" formControlName="durationTo" />
+      <div
+        *ngIf="
+          workHistory.get('durationTo')?.invalid &&
+          workHistory.get('durationTo')?.touched
+        "
+      >
+        <span *ngIf="workHistory.get('durationTo')?.hasError('required')"
+          >Duration To is required</span
+        >
+        <!-- Add other validation messages for durationTo if needed -->
+      </div>
+
+      <label for="relievingCertificate">Relieving Certificate</label>
+      <input
+        type="file"
+        id="relievingCertificate"
+        formControlName="relievingCertificate"
+      />
+
+      <button
+        type="button"
+        (click)="removeWorkHistory(i)"
+        *ngIf="workHistoryItems.length > 1"
+      >
+        Remove
+      </button>
+      <hr *ngIf="i !== workHistoryItems.length - 1" />
+    </div>
+  </div>
+
+  <button type="button" (click)="addWorkHistory()">Add Work History</button>
+  <button type="submit" [disabled]="workHistoryForm.invalid">Submit</button>
+</form>
