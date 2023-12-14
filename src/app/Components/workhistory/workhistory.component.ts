@@ -40,10 +40,8 @@ export class WorkhistoryComponent implements OnInit {
 
   onSubmit() {
     if (this.workHistoryForm.valid) {
-      // Implement what happens on form submission
-      console.log(this.workHistoryForm.value); // Example: Log form values
+      console.log(this.workHistoryForm.value);
     } else {
-      // Handle invalid form
       console.log('Form is invalid');
     }
   }

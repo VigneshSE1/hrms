@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
- 
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
+
 @Component({
   selector: 'app-personalinfo',
   templateUrl: './personalinfo.component.html',
@@ -8,15 +13,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class PersonalinfoComponent {
   myForm!: FormGroup;
- 
+
   constructor(private fb: FormBuilder) {}
- 
+  submitted = false;
   ngOnInit() {
     this.myForm = this.fb.group({
       fullName: ['', Validators.required],
       dob: ['', Validators.required],
       fathersName: ['', Validators.required],
-      bloodGroup: [''],
+      bloodGroup: ['', Validators.required],
       personalEmail: ['', [Validators.required, Validators.email]],
       personalMobileNumber: [
         '',
@@ -30,13 +35,15 @@ export class PersonalinfoComponent {
       ],
     });
   }
- 
+  get formControls(): { [key: string]: AbstractControl } {
+    return this.myForm.controls;
+  }
+
   onSubmit() {
-    if (this.myForm.valid) {
-      console.log(this.myForm.value);
-    } else {
-      console.log('Form is invalid');
+    this.submitted = true;
+    if (this.myForm.invalid) {
+      return;
     }
+    console.log(this.myForm?.value);
   }
 }
- 

@@ -1,4 +1,4 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="flex-form">
+<form [formGroup]="myForm" class="flex-form container">
   <div>Personal Information</div>
 
   <div class="flex-row">
@@ -13,7 +13,16 @@
         placeholder="Full Name"
         formControlName="fullName"
       />
+      <div
+        *ngIf="submitted && formControls['fullName'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['fullName'].errors['required']">
+          Name is required
+        </div>
+      </div>
     </div>
+
     <div class="flex-column">
       <label for="dob" class="block mb-2 text-md text-gray-600"
         >Date of Birth</label
@@ -24,6 +33,14 @@
         id="dob"
         formControlName="dob"
       />
+      <div
+        *ngIf="submitted && formControls['dob'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['dob'].errors['required']">
+          DOB is required
+        </div>
+      </div>
     </div>
     <div class="flex-column">
       <label class="block mb-2 text-md text-gray-600" for="fathersName"
@@ -36,6 +53,14 @@
         id="fathersName"
         formControlName="fathersName"
       />
+      <div
+        *ngIf="submitted && formControls['fathersName'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['fathersName'].errors['required']">
+          Father's Name is required
+        </div>
+      </div>
     </div>
   </div>
 
@@ -59,6 +84,14 @@
         <option value="O+">O+</option>
         <option value="O-">O-</option>
       </select>
+      <div
+        *ngIf="submitted && formControls['bloodGroup'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['bloodGroup'].errors['required']">
+          Blood Group is required
+        </div>
+      </div>
     </div>
     <div class="flex-column">
       <label class="block mb-2 text-md text-gray-600" for="personalEmail"
@@ -71,6 +104,14 @@
         placeholder="Personal Email"
         formControlName="personalEmail"
       />
+      <div
+        *ngIf="submitted && formControls['personalEmail'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['personalEmail'].errors['required']">
+          Email is required
+        </div>
+      </div>
     </div>
     <div class="flex-column">
       <label class="block mb-2 text-md text-gray-600" for="personalMobileNumber"
@@ -83,6 +124,14 @@
         placeholder="Mobile Number"
         formControlName="personalMobileNumber"
       />
+      <div
+        *ngIf="submitted && formControls['personalMobileNumber'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['personalMobileNumber'].errors['required']">
+          Mobile Number is required
+        </div>
+      </div>
     </div>
   </div>
 
@@ -97,6 +146,14 @@
         placeholder="Contact Address"
         formControlName="contactAddress"
       />
+      <div
+        *ngIf="submitted && formControls['contactAddress'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['contactAddress'].errors['required']">
+          Contact Address is required
+        </div>
+      </div>
     </div>
     <div class="flex-column">
       <label class="block mb-2 text-md text-gray-600" for="state"
@@ -111,6 +168,14 @@
         <option value="CA">California</option>
         <option value="NY">New York</option>
       </select>
+      <div
+        *ngIf="submitted && formControls['state'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['state'].errors['required']">
+          Country is required
+        </div>
+      </div>
     </div>
     <div class="flex-column">
       <label class="block mb-2 text-md text-gray-600" for="pincode"
@@ -123,14 +188,22 @@
         placeholder="Pincode"
         formControlName="pincode"
       />
+      <div
+        *ngIf="submitted && formControls['pincode'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="formControls['pincode'].errors['required']">
+          Pincode is required
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="flex justify-center items-center">
+  <div class="flex justify-center cursor-pointer items-center">
     <button
       class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
       type="submit"
-      [disabled]="myForm.invalid"
+      (click)="onSubmit()"
     >
       Submit
     </button>
