@@ -1,0 +1,11 @@
+pro-gamification {
+  ::ng-deep .menu {
+    .holder .activity {
+      .pane .pro-container .scroll table.leader-board {
+        td.rank .circle {
+          width: 2em !important;
+        }
+      }
+    }
+  }
+}
