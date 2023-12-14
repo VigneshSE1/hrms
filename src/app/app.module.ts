@@ -13,6 +13,7 @@ import { CompetencyComponent } from './Components/compentency/compentency.compon
 import { WorkhistoryComponent } from './Components/workhistory/workhistory.component';
 import { WizardComponent } from './Components/wizard/wizard.component';
 import { InformationComponent } from './Components/information/information.component';
+import { LeavesComponent } from './Components/leaves/leaves.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { InformationComponent } from './Components/information/information.compo
     WorkhistoryComponent,
     WizardComponent,
     InformationComponent,
+    LeavesComponent,
   ],
   imports: [
     BrowserModule,

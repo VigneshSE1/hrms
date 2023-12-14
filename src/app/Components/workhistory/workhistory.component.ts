@@ -9,7 +9,7 @@ import { Gamification } from '@theproindia/pro-gamification';
 })
 export class WorkhistoryComponent implements OnInit {
   workHistoryForm!: FormGroup;
-
+  isActive = false;
   constructor(private fb: FormBuilder, private gamification: Gamification) {}
 
   ngOnInit() {
@@ -25,6 +25,10 @@ export class WorkhistoryComponent implements OnInit {
       durationTo: ['', Validators.required],
       relievingCertificate: [''],
     });
+  }
+
+  togglePopup() {
+    this.isActive = !this.isActive;
   }
 
   get workHistoryItems(): FormArray {

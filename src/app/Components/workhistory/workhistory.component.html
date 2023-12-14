@@ -1,3 +1,22 @@
+<div *ngIf="isActive" class="modal-wrap">
+  <div class="modal-content text-center">
+    <div class="flex justify-end top-0">
+      <img
+        src="../../../assets/images/close.svg"
+        class="cursor-pointer"
+        (click)="togglePopup()"
+      />
+    </div>
+    <div class="flex justify-center">
+      <img src="../../../assets/images/congragulations.svg" />
+    </div>
+    <div class="text-2xl my-4">Congratulations!</div>
+    <div class="text-base mb-5">
+      You have completed the onboarding process sucessfully !
+    </div>
+  </div>
+</div>
+
 <div class="flex-1 h-[80%] w-[80%] ml-[10%] my-5 main-container">
   <app-wizard></app-wizard>
   <form [formGroup]="workHistoryForm" (ngSubmit)="onSubmit()" class="flex-form">
@@ -9,7 +28,7 @@
       >
         <div class="flex justify-between w-full">
           <div class="w-1/4 pr-4">
-            <label for="companyName" class="block mb-2 text-md text-gray-600"
+            <label for="companyName" class="block mb-2 text-md text-gray-400"
               >Company Name</label
             >
             <input
@@ -31,9 +50,9 @@
               >
             </div>
           </div>
-  
+
           <div class="w-1/4 pr-4">
-            <label for="durationFrom" class="block mb-2 text-md text-gray-600"
+            <label for="durationFrom" class="block mb-2 text-md text-gray-400"
               >Duration From</label
             >
             <input
@@ -49,15 +68,16 @@
               "
               class="text-red-500 text-sm mt-1"
             >
-              <span *ngIf="workHistory.get('durationFrom')?.hasError('required')"
+              <span
+                *ngIf="workHistory.get('durationFrom')?.hasError('required')"
                 >Duration From is required</span
               >
               <!-- Add other validation messages for durationFrom if needed -->
             </div>
           </div>
-  
+
           <div class="w-1/4 pr-4">
-            <label for="durationTo" class="block mb-2 text-md text-gray-600"
+            <label for="durationTo" class="block mb-2 text-md text-gray-400"
               >Duration To</label
             >
             <input
@@ -79,11 +99,11 @@
               <!-- Add other validation messages for durationTo if needed -->
             </div>
           </div>
-  
+
           <div class="w-1/4">
             <label
               for="relievingCertificate"
-              class="block mb-2 text-md text-gray-600"
+              class="block mb-2 text-md text-gray-400"
               >Relieving Certificate</label
             >
             <input
@@ -94,7 +114,7 @@
             />
           </div>
         </div>
-  
+
         <button
           type="button"
           (click)="removeWorkHistory(i)"
@@ -106,7 +126,7 @@
         <hr *ngIf="i !== workHistoryItems.length - 1" class="my-4 w-full" />
       </div>
     </div>
-  
+
     <div>
       <button
         type="button"
@@ -121,15 +141,13 @@
         class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
         type="submit"
         [disabled]="workHistoryForm.invalid"
-        (click)="onSubmit()"
+        (click)="togglePopup(); onSubmit()"
       >
         Update
       </button>
     </div>
   </form>
-  <div
-    class="actions flex gap-4 text-lg justify-end p-4 "
-  >
+  <div class="actions flex gap-4 text-lg justify-end p-4">
     <a [routerLink]="['/information/competency']">< Previous</a>
     <a disabled class="opacity-50" target="_blank">Next ></a>
   </div>

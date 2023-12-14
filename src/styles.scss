@@ -27,3 +27,14 @@ body {
   border: 0.5px solid #dad3d3;
   background: #f7f7f7;
 }
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+body::-webkit-scrollbar-track {
+  display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  display: none;
+}

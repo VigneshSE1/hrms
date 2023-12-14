@@ -23,15 +23,7 @@ interface HeaderMenu {
 }
 
 export enum MainMenu {
-  Home = 1,
-  DAS = 2,
-  STB = 3,
-  User = 4,
-  Customers = 5,
-  Products = 6,
-  Channels = 7,
-  Speaker = 8,
-  Report = 9,
-  TRAI = 10,
-  Settings = 11,
+  Info = 1,
+  Leave = 2,
+  TimeSheet = 3,
 }
