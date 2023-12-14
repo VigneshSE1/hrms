@@ -14,7 +14,20 @@ export class PersonalinfoComponent {
   ngOnInit() {
     this.myForm = this.fb.group({
       fullName: ['', Validators.required],
-      // Define other form controls here following the same pattern
+      dob: ['', Validators.required],
+      fathersName: ['', Validators.required],
+      bloodGroup: [''],
+      personalEmail: ['', [Validators.required, Validators.email]],
+      personalMobileNumber: [
+        '',
+        [Validators.required, Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')],
+      ],
+      contactAddress: ['', Validators.required],
+      state: ['', Validators.required],
+      pincode: [
+        '',
+        [Validators.required, Validators.pattern('^[1-9][0-9]{5}$')],
+      ],
     });
   }
  
