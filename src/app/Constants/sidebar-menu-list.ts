@@ -3,7 +3,7 @@ import { MainMenu, MenuList } from '../Models/sidebar-menu-list.model';
 export const sidebarMenuLists: MenuList[] = [
   {
     menuId: MainMenu.Info,
-    label: 'information',
+    label: '',
     imageUrl: '../assets/images/dashboard_icon.svg',
     activeImageUrl: '../assets/images/dashboard_icon.svg',
     alt: 'Home',
@@ -11,8 +11,8 @@ export const sidebarMenuLists: MenuList[] = [
     subItem: [],
   },
   {
-    menuId: MainMenu.Leave,
-    label: 'leaves',
+    menuId: MainMenu.Info,
+    label: 'information',
     imageUrl: '../assets/images/user.svg',
     activeImageUrl: '../assets/images/user.svg',
     alt: 'onboarding',
@@ -21,7 +21,7 @@ export const sidebarMenuLists: MenuList[] = [
   },
   {
     menuId: MainMenu.Leave,
-    label: 'leaves',
+    label: '',
     imageUrl: '../assets/images/organization_icon.svg',
     activeImageUrl: '../assets/images/organization_icon.svg',
     alt: 'Home',
@@ -30,7 +30,7 @@ export const sidebarMenuLists: MenuList[] = [
   },
   {
     menuId: MainMenu.TimeSheet,
-    label: 'User',
+    label: 'time-sheet',
     imageUrl: '../assets/images/timesheet_icon.svg',
     activeImageUrl: '../assets/images/timesheet_icon.svg',
     alt: 'Home',
@@ -48,7 +48,7 @@ export const sidebarMenuLists: MenuList[] = [
   },
   {
     menuId: MainMenu.Leave,
-    label: 'leaves',
+    label: '',
     imageUrl: '../assets/images/goal_icon.svg',
     activeImageUrl: '../assets/images/goal_icon.svg',
     alt: 'Home',
@@ -57,7 +57,7 @@ export const sidebarMenuLists: MenuList[] = [
   },
   {
     menuId: MainMenu.TimeSheet,
-    label: 'User',
+    label: '',
     imageUrl: '../assets/images/refer_icon.svg',
     activeImageUrl: '../assets/images/refer_icon.svg',
     alt: 'Home',
