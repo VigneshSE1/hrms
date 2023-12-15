@@ -1,4 +1,4 @@
-<div class="flex-1 h-[80%] w-[80%] ml-[10%] my-5 main-container">
+<div class="flex-1 h-[80%] w-[80%] ml-[10%] my-2 main-container ">
   <app-wizard></app-wizard>
   <form [formGroup]="competencyForm" (ngSubmit)="onSubmit()" class="flex-form m-14">
     <div formArrayName="competencies">
@@ -120,7 +120,7 @@
       </button>
     </div>
   </form>
-  <div class="actions flex gap-4 text-lg justify-end p-4">
+  <div class="actions flex gap-4 text-lg justify-end p-1">
     <a [routerLink]="['/information/personal-info']">&lt; Previous</a>
     <a [routerLink]="['/information/work-history']">Next &gt;</a>
   </div>
