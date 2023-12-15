@@ -1,18 +1,12 @@
-<header class="h-16 fixed top-0 w-full pt-5 px-6 text-center">
-  <div class="">
-    <img
-      src="../assets/images/product-logo.svg"
-      alt="product logo"
-      class="absolute left-8"
-    />
-
+<header class="bg-[#F7F7F7] fixed top-0 w-full pt-2 px-6 text-center">
+  <div class="flex justify-between">
+    <img src="../assets/images/product-logo.svg" alt="product logo" />
     <pro-gamification
-      class="absolute right-5"
       [userId]="userId"
       [applicationId]="appId"
       [themeColor]="'sandbox'"
       [menuColor]="'black'"
     ></pro-gamification>
-    <app-toaster></app-toaster>
   </div>
+  <app-toaster></app-toaster>
 </header>
