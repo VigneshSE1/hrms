@@ -56,6 +56,7 @@ export class WorkhistoryComponent implements OnInit {
   }
   async onSubmit() {
     if (this.workHistoryForm.valid) {
+      this.togglePopup();
       this.rewardPoints = await this.gamification.updateGameAction(
         this.gameConfigs.userId,
         this.gameConfigs.workHistorySubmissionAction,

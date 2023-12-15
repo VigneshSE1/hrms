@@ -21,11 +21,7 @@
 
 <div class="flex-1 h-[80%] w-[80%] ml-[10%] my-2 main-container">
   <app-wizard></app-wizard>
-  <form
-    [formGroup]="workHistoryForm"
-    (ngSubmit)="onSubmit()"
-    class="flex-form m-14"
-  >
+  <form [formGroup]="workHistoryForm" class="flex-form m-14">
     <div formArrayName="workHistoryItems">
       <div
         *ngFor="let workHistory of workHistoryItems.controls; let i = index"
@@ -33,9 +29,7 @@
         class="flex-row"
       >
         <div class="flex justify-between w-full">
-          <!-- First Column -->
           <div class="w-1/2 pr-4">
-            <!-- Company Name Input -->
             <label for="companyName" class="block mb-2 text-md text-gray-400"
               >Company Name</label
             >
@@ -59,9 +53,7 @@
             </div>
           </div>
 
-          <!-- Second Column -->
           <div class="w-1/2">
-            <!-- Duration From Input -->
             <label for="durationFrom" class="block mb-2 text-md text-gray-400"
               >Duration From</label
             >
@@ -82,16 +74,12 @@
                 *ngIf="workHistory.get('durationFrom')?.hasError('required')"
                 >Duration From is required</span
               >
-              <!-- Add other validation messages for durationFrom if needed -->
             </div>
           </div>
         </div>
 
-        <!-- Second Row -->
         <div class="flex justify-between w-full mt-4">
-          <!-- Third Column -->
           <div class="w-1/2 pr-4">
-            <!-- Duration To Input -->
             <label for="durationTo" class="block mb-2 text-md text-gray-400"
               >Duration To</label
             >
@@ -111,13 +99,10 @@
               <span *ngIf="workHistory.get('durationTo')?.hasError('required')"
                 >Duration To is required</span
               >
-              <!-- Add other validation messages for durationTo if needed -->
             </div>
           </div>
 
-          <!-- Fourth Column -->
           <div class="w-1/2">
-            <!-- Relieving Certificate Input -->
             <label
               for="relievingCertificate"
               class="block mb-2 text-md text-gray-400"
@@ -157,8 +142,7 @@
       <button
         class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
         type="submit"
-        [disabled]="workHistoryForm.invalid"
-        (click)="togglePopup(); onSubmit()"
+        (click)="onSubmit()"
       >
         Update
       </button>
