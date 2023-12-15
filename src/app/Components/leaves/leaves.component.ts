@@ -11,7 +11,7 @@ export class LeavesComponent implements OnInit {
   submitted = false;
   showLeaveApply = false;
   constructor(private formBuilder: FormBuilder) {}
-
+  isActivecongrats = false;
   ngOnInit(): void {
     this.leaveApprovalForm = this.formBuilder.group({
       leaveType: ['', Validators.required],
@@ -24,17 +24,18 @@ export class LeavesComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
+    console.log('form submitred sucessfully');
+    this.toggleContrtsPopup();
 
-    // Stop here if the form is invalid
-    if (this.leaveApprovalForm.invalid) {
-      return;
-    }
-
-    // Process the form data further (e.g., submit to server)
-    console.log('Form submitted:', this.leaveApprovalForm.value);
+    console.log(this.isActivecongrats , "test");
+    // if (this.leaveApprovalForm.invalid) {
+    //   return;
+    // }
   }
 
+  toggleContrtsPopup() {
+    this.isActivecongrats = !this.isActivecongrats;
+  }
   toggleLeaveApply() {
     this.showLeaveApply = !this.showLeaveApply;
   }
