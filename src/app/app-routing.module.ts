@@ -5,6 +5,7 @@ import { CompetencyComponent } from './Components/compentency/compentency.compon
 import { WorkhistoryComponent } from './Components/workhistory/workhistory.component';
 import { InformationComponent } from './Components/information/information.component';
 import { LeavesComponent } from './Components/leaves/leaves.component';
+import { TimesheetComponent } from './Components/timesheet/timesheet.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'leaves',
     component: LeavesComponent,
+  },
+  {
+    path: 'time-sheet',
+    component: TimesheetComponent,
   },
   { path: '', redirectTo: 'information', pathMatch: 'full' }, // Redirect to default path
   { path: '**', component: PersonalinfoComponent }, // Redirect to a 404 Not Found page for unmatched routes
