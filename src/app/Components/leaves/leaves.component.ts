@@ -34,13 +34,13 @@ export class LeavesComponent implements OnInit {
 
   async onSubmit() {
     if (this.leaveApprovalForm.valid) {
-      this.toggleContrtsPopup();
       this.rewardPoints = await this.gamification.updateGameAction(
         this.gameConfigs.userId,
         this.gameConfigs.workHistorySubmissionAction,
         '',
         ''
       );
+      this.toggleContrtsPopup();
       this.toasterService.show(this.rewardPoints.points);
     }
   }
