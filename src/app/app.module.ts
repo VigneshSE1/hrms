@@ -17,6 +17,7 @@ import { LeavesComponent } from './Components/leaves/leaves.component';
 import { environment } from '../environments/environment';
 import { ToasterComponent } from './Components/toaster/toaster.component';
 import { TimesheetComponent } from './Components/timesheet/timesheet.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TimesheetComponent } from './Components/timesheet/timesheet.component';
     LeavesComponent,
     ToasterComponent,
     TimesheetComponent,
+    ProfileCardComponent,
   ],
   imports: [
     BrowserModule,
