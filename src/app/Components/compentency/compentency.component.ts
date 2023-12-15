@@ -53,7 +53,6 @@ export class CompetencyComponent implements OnInit {
   async onSubmit() {
     this.submitted = true;
     if (this.competencyForm.valid) {
-      // Implement what happens on form submission
       this.rewardPoints = await this.gamification.updateGameAction(
         this.gameConfigs.userId,
         this.gameConfigs.workHistorySubmissionAction,
@@ -66,7 +65,7 @@ export class CompetencyComponent implements OnInit {
         Form.COMPETENCY_FORM,
         JSON.stringify(this.competencyForm?.value)
       );
-      console.log(this.competencyForm.value); // Example: Log form values
+      console.log(this.competencyForm.value);
     } else {
       console.log('Form is invalid');
     }
