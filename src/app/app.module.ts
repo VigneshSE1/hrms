@@ -15,6 +15,7 @@ import { WizardComponent } from './Components/wizard/wizard.component';
 import { InformationComponent } from './Components/information/information.component';
 import { LeavesComponent } from './Components/leaves/leaves.component';
 import { environment } from '../environments/environment';
+import { ToasterComponent } from './Components/toaster/toaster.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { environment } from '../environments/environment';
     WizardComponent,
     InformationComponent,
     LeavesComponent,
+    ToasterComponent,
   ],
   imports: [
     BrowserModule,

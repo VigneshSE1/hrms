@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Gamification } from '@theproindia/pro-gamification';
 import { environment } from '../../../environments/environment';
 import { Form } from '../enum/form.enum';
+import { ToasterService } from '../../Services/toaster.service';
 
 @Component({
   selector: 'app-competency',
@@ -13,8 +14,12 @@ export class CompetencyComponent implements OnInit {
   competencyForm!: FormGroup;
   gameConfigs = environment.gamification;
   competency = sessionStorage.getItem(Form.COMPETENCY_FORM);
-
-  constructor(private fb: FormBuilder, private gamification: Gamification) {}
+  rewardPoints: any;
+  constructor(
+    private fb: FormBuilder,
+    private gamification: Gamification,
+    private toasterService: ToasterService
+  ) {}
   submitted = false;
   ngOnInit() {
     this.competencyForm = this.fb.group({
@@ -45,16 +50,18 @@ export class CompetencyComponent implements OnInit {
     this.competencies.removeAt(index);
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
     if (this.competencyForm.valid) {
       // Implement what happens on form submission
-      this.gamification.updateGameAction(
+      this.rewardPoints = await this.gamification.updateGameAction(
         this.gameConfigs.userId,
         this.gameConfigs.workHistorySubmissionAction,
         '',
         ''
       );
+      this.toasterService.show(this.rewardPoints.points);
+
       sessionStorage.setItem(
         Form.COMPETENCY_FORM,
         JSON.stringify(this.competencyForm?.value)

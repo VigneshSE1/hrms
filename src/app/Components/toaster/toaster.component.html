@@ -1,0 +1,9 @@
+<div
+  class="toast-success flex justify-between"
+  *ngIf="isActive && points !== 0"
+>
+  <p>{{ "congrats ! you earned " + points + " points" }}</p>
+  <a class="close cursor-pointer text-2xl" (click)="isActive = false"
+    >&times;</a
+  >
+</div>

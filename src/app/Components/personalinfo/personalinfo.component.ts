@@ -8,6 +8,7 @@ import {
 import { Gamification } from '@theproindia/pro-gamification';
 import { environment } from '../../../environments/environment';
 import { Form } from '../enum/form.enum';
+import { ToasterService } from '../../Services/toaster.service';
 
 @Component({
   selector: 'app-personalinfo',
@@ -17,7 +18,12 @@ import { Form } from '../enum/form.enum';
 export class PersonalinfoComponent {
   myForm!: FormGroup;
   isActive = false;
-  constructor(private fb: FormBuilder, private gamification: Gamification) {}
+  rewardPoints: any;
+  constructor(
+    private fb: FormBuilder,
+    private gamification: Gamification,
+    private toasterService: ToasterService
+  ) {}
   submitted = false;
   gameConfigs = environment.gamification;
   personalInfo = sessionStorage.getItem(Form.PERSONAL_INFO_FORM);
@@ -47,12 +53,12 @@ export class PersonalinfoComponent {
     return this.myForm.controls;
   }
 
-  onSubmit() {
+  async onSubmit() {
     this.submitted = true;
     if (this.myForm.invalid) {
       return;
     }
-    this.gamification.updateGameAction(
+    this.rewardPoints = await this.gamification.updateGameAction(
       this.gameConfigs.userId,
       this.gameConfigs.profileSubmissionAction,
       '',
@@ -62,6 +68,7 @@ export class PersonalinfoComponent {
       Form.PERSONAL_INFO_FORM,
       JSON.stringify(this.myForm?.value)
     );
+    this.toasterService.show(this.rewardPoints.points);
     console.log(this.myForm?.value);
   }
 
