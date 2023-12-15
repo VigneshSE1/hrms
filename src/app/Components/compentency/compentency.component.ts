@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Gamification } from '@theproindia/pro-gamification';
 import { environment } from '../../../environments/environment';
+import { Form } from '../enum/form.enum';
 
 @Component({
   selector: 'app-competency',
@@ -11,6 +12,7 @@ import { environment } from '../../../environments/environment';
 export class CompetencyComponent implements OnInit {
   competencyForm!: FormGroup;
   gameConfigs = environment.gamification;
+  competency = sessionStorage.getItem(Form.COMPETENCY_FORM);
 
   constructor(private fb: FormBuilder, private gamification: Gamification) {}
   submitted = false;
@@ -18,6 +20,8 @@ export class CompetencyComponent implements OnInit {
     this.competencyForm = this.fb.group({
       competencies: this.fb.array([this.createCompetency()]),
     });
+    this.competency &&
+      this.competencyForm.setValue(JSON.parse(this.competency || '{}'));
   }
 
   createCompetency(): FormGroup {
@@ -51,7 +55,11 @@ export class CompetencyComponent implements OnInit {
         '',
         ''
       );
-      console.log(this.competencyForm.value);
+      sessionStorage.setItem(
+        Form.COMPETENCY_FORM,
+        JSON.stringify(this.competencyForm?.value)
+      );
+      console.log(this.competencyForm.value); // Example: Log form values
     } else {
       console.log('Form is invalid');
     }
