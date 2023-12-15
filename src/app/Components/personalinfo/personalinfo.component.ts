@@ -27,6 +27,7 @@ export class PersonalinfoComponent {
   submitted = false;
   gameConfigs = environment.gamification;
   personalInfo = sessionStorage.getItem(Form.PERSONAL_INFO_FORM);
+  isActivecongrats = false;
   ngOnInit() {
     this.myForm = this.fb.group({
       fullName: ['', Validators.required],
@@ -64,12 +65,22 @@ export class PersonalinfoComponent {
       '',
       ''
     );
+
+    this.toggleContrtsPopup();
+
     sessionStorage.setItem(
       Form.PERSONAL_INFO_FORM,
       JSON.stringify(this.myForm?.value)
     );
+    // this.myForm.reset();
+    // setTimeout(() => {
+    //   this.myForm.markAsUntouched();
+    // });
     this.toasterService.show(this.rewardPoints.points);
-    console.log(this.myForm?.value);
+  }
+
+  toggleContrtsPopup() {
+    this.isActivecongrats = !this.isActivecongrats;
   }
 
   hidePopup() {

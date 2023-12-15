@@ -15,6 +15,7 @@ export class CompetencyComponent implements OnInit {
   gameConfigs = environment.gamification;
   competency = sessionStorage.getItem(Form.COMPETENCY_FORM);
   rewardPoints: any;
+  isActivecongrats = false;
   constructor(
     private fb: FormBuilder,
     private gamification: Gamification,
@@ -59,8 +60,8 @@ export class CompetencyComponent implements OnInit {
         '',
         ''
       );
+      this.toggleContrtsPopup();
       this.toasterService.show(this.rewardPoints.points);
-
       sessionStorage.setItem(
         Form.COMPETENCY_FORM,
         JSON.stringify(this.competencyForm?.value)
@@ -69,5 +70,9 @@ export class CompetencyComponent implements OnInit {
     } else {
       console.log('Form is invalid');
     }
+  }
+
+  toggleContrtsPopup() {
+    this.isActivecongrats = !this.isActivecongrats;
   }
 }
