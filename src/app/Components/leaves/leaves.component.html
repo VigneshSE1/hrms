@@ -1,1 +1,75 @@
-<p>leaves works!</p>
+<form [formGroup]="leaveApprovalForm" class="m-8 space-y-4">
+  <div class="flex flex-col">
+    <label for="leaveType" class="text-gray-700">Leave Type</label>
+    <select
+      id="leaveType"
+      class="w-full rounded-md border border-gray-300 focus:outline-none"
+      formControlName="leaveType"
+    >
+      <option value="" disabled selected>Select Leave Type</option>
+      <option value="sick">Sick Leave</option>
+      <option value="casual">Casual Leave</option>
+      <option value="earned">Earned Leave</option>
+    </select>
+  </div>
+
+  <div class="flex flex-wrap gap-4">
+    <!-- From Date -->
+    <div class="flex flex-col w-1/2">
+      <label for="fromDate" class="text-gray-700">From Date</label>
+      <input
+        type="date"
+        id="fromDate"
+        class="w-full rounded-md border border-gray-300 focus:outline-none"
+        formControlName="fromDate"
+      />
+    </div>
+
+    <!-- To Date -->
+    <div class="flex flex-col w-1/2">
+      <label for="toDate" class="text-gray-700">To Date</label>
+      <input
+        type="date"
+        id="toDate"
+        class="w-full rounded-md border border-gray-300 focus:outline-none"
+        formControlName="toDate"
+      />
+    </div>
+  </div>
+
+  <!-- Checkboxes -->
+  <div class="flex items-center space-x-8">
+    <label class="flex items-center">
+      <input
+        type="checkbox"
+        formControlName="firstHalf"
+        class="rounded border-gray-300 focus:outline-none"
+      />
+      <span class="ml-2">First Half</span>
+    </label>
+    <label class="flex items-center">
+      <input
+        type="checkbox"
+        formControlName="secondHalf"
+        class="rounded border-gray-300 focus:outline-none"
+      />
+      <span class="ml-2">Second Half</span>
+    </label>
+  </div>
+
+  <div class="flex flex-col">
+    <label for="reason" class="text-gray-700">Reason</label>
+    <textarea
+      id="reason"
+      class="w-full rounded-md border border-gray-300 focus:outline-none"
+      formControlName="reason"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+  >
+    Submit
+  </button>
+</form>
