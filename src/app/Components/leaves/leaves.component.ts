@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LeavesComponent implements OnInit {
   leaveApprovalForm!: FormGroup;
   submitted = false;
-
+  showLeaveApply = false;
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
@@ -33,5 +33,9 @@ export class LeavesComponent implements OnInit {
 
     // Process the form data further (e.g., submit to server)
     console.log('Form submitted:', this.leaveApprovalForm.value);
+  }
+
+  toggleLeaveApply() {
+    this.showLeaveApply = !this.showLeaveApply;
   }
 }

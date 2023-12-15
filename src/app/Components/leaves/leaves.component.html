@@ -1,75 +1,136 @@
-<form [formGroup]="leaveApprovalForm" class="m-8 space-y-4">
-  <div class="flex flex-col">
-    <label for="leaveType" class="text-gray-700">Leave Type</label>
-    <select
-      id="leaveType"
-      class="w-full rounded-md border border-gray-300 focus:outline-none"
-      formControlName="leaveType"
+<div class="flex justify-center items-center">
+  <div class="flex flex-wrap justify-center gap-8">
+    <div class="w-64 h-48 flex justify-center items-center rounded-lg">
+      <img
+        src="../../../assets/images/lm-card-1.svg"
+        alt="Image 1"
+        class="max-w-full max-h-full rounded-lg"
+      />
+    </div>
+    <div class="w-64 h-48 flex justify-center items-center rounded-lg">
+      <img
+        src="../../../assets/images/lm-card-2.svg"
+        alt="Image 2"
+        class="max-w-full max-h-full rounded-lg"
+      />
+    </div>
+    <div class="w-64 h-48 flex justify-center items-center rounded-lg">
+      <img
+        src="../../../assets/images/lm-card-3.svg"
+        alt="Image 3"
+        class="max-w-full max-h-full rounded-lg"
+      />
+    </div>
+    <div class="w-64 h-48 flex justify-center items-center rounded-lg">
+      <img
+        src="../../../assets/images/lm-card-4.svg"
+        alt="Image 4"
+        class="max-w-full max-h-full rounded-lg"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="flex">
+  <div class="w-3/4 flex justify-center items-center rounded-lg">
+    <img
+      src="../../../assets/images/leavecalendar_new.svg"
+      alt="Image 4"
+      class="max-w-full max-h-full rounded-lg"
+    />
+  </div>
+  <div class="main-container">
+    <div
+      *ngIf="!showLeaveApply"
+      class="w-3/4 flex justify-center items-center rounded-lg"
     >
-      <option value="" disabled selected>Select Leave Type</option>
-      <option value="sick">Sick Leave</option>
-      <option value="casual">Casual Leave</option>
-      <option value="earned">Earned Leave</option>
-    </select>
-  </div>
-
-  <div class="flex flex-wrap gap-4">
-    <!-- From Date -->
-    <div class="flex flex-col w-1/2">
-      <label for="fromDate" class="text-gray-700">From Date</label>
-      <input
-        type="date"
-        id="fromDate"
-        class="w-full rounded-md border border-gray-300 focus:outline-none"
-        formControlName="fromDate"
+      <div
+        (click)="toggleLeaveApply()"
+        class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+      >
+        Apply Leave
+      </div>
+      <img
+        src="../../../assets/images/leave history.svg"
+        alt="Image 4"
+        class="max-w-full max-h-full rounded-lg"
       />
     </div>
+    <div *ngIf="showLeaveApply">
+      <form [formGroup]="leaveApprovalForm" class="m-8 space-y-4">
+        <div class="flex flex-col">
+          <label for="leaveType" class="text-gray-700">Leave Type</label>
+          <select
+            id="leaveType"
+            class="w-96 rounded-md p-2 border border-gray-300 focus:outline-none"
+            formControlName="leaveType"
+          >
+            <option value="" disabled selected>Select Leave Type</option>
+            <option value="sick">Sick Leave</option>
+            <option value="casual">Casual Leave</option>
+            <option value="earned">Earned Leave</option>
+          </select>
+        </div>
 
-    <!-- To Date -->
-    <div class="flex flex-col w-1/2">
-      <label for="toDate" class="text-gray-700">To Date</label>
-      <input
-        type="date"
-        id="toDate"
-        class="w-full rounded-md border border-gray-300 focus:outline-none"
-        formControlName="toDate"
-      />
+        <div class="flex gap-4">
+          <!-- From Date -->
+          <div class="flex flex-col w-96">
+            <label for="fromDate" class="text-gray-700">From Date</label>
+            <input
+              type="date"
+              id="fromDate"
+              class="w-full rounded-md p-2 border border-gray-300 focus:outline-none"
+              formControlName="fromDate"
+            />
+          </div>
+          <!-- To Date -->
+          <div class="flex flex-col w-1/2">
+            <label for="toDate" class="text-gray-700">To Date</label>
+            <input
+              type="date"
+              id="toDate"
+              class="w-96 rounded-md p-2 border border-gray-300 focus:outline-none"
+              formControlName="toDate"
+            />
+          </div>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="flex items-center space-x-8">
+          <label class="flex items-center">
+            <input
+              type="checkbox"
+              formControlName="firstHalf"
+              class="rounded border-gray-300 focus:outline-none"
+            />
+            <span class="ml-2">First Half</span>
+          </label>
+          <label class="flex items-center">
+            <input
+              type="checkbox"
+              formControlName="secondHalf"
+              class="rounded border-gray-300 focus:outline-none"
+            />
+            <span class="ml-2">Second Half</span>
+          </label>
+        </div>
+
+        <div class="flex flex-col w-[57%]">
+          <label for="reason" class="text-gray-700">Reason</label>
+          <textarea
+            id="reason"
+            class="rounded-md border border-gray-300 focus:outline-none"
+            formControlName="reason"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+        >
+          Submit
+        </button>
+      </form>
     </div>
   </div>
-
-  <!-- Checkboxes -->
-  <div class="flex items-center space-x-8">
-    <label class="flex items-center">
-      <input
-        type="checkbox"
-        formControlName="firstHalf"
-        class="rounded border-gray-300 focus:outline-none"
-      />
-      <span class="ml-2">First Half</span>
-    </label>
-    <label class="flex items-center">
-      <input
-        type="checkbox"
-        formControlName="secondHalf"
-        class="rounded border-gray-300 focus:outline-none"
-      />
-      <span class="ml-2">Second Half</span>
-    </label>
-  </div>
-
-  <div class="flex flex-col">
-    <label for="reason" class="text-gray-700">Reason</label>
-    <textarea
-      id="reason"
-      class="w-full rounded-md border border-gray-300 focus:outline-none"
-      formControlName="reason"
-    ></textarea>
-  </div>
-
-  <button
-    type="submit"
-    class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-  >
-    Submit
-  </button>
-</form>
+</div>
