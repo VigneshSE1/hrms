@@ -1,6 +1,25 @@
+<div *ngIf="isActivecongrats" class="modal-wrap">
+  <div class="modal-content text-center">
+    <div class="flex justify-end top-0">
+      <img
+        src="../../../assets/images/close.svg"
+        class="cursor-pointer"
+        (click)="toggleContrtsPopup()"
+        alt="closeIcon"
+      />
+    </div>
+    <div class="flex justify-center">
+      <img src="../../../assets/images/congragulations.svg" alt="popup" />
+    </div>
+    <div class="text-2xl text-black my-4">Congratulations!</div>
+    <div class="text-base text-black mb-5">
+      You have completed the onboarding process sucessfully !
+    </div>
+  </div>
+</div>
+
 <div class="flex flex-col ml-10">
   <span class="pl-3 text-2xl">Leave Management</span>
-  <!-- leave management card -->
   <div class="flex flex-1 justify-between">
     <div class="flex justify-center items-center flex-grow">
       <img
@@ -32,7 +51,6 @@
     </div>
   </div>
 
-  <!-- leave management -->
   <div class="flex justify-between">
     <div class="flex items-start">
       <img
@@ -47,8 +65,8 @@
           <span>Leave History</span>
           <button
             (click)="toggleLeaveApply()"
-            class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-          >
+            class="p-2 text-sm text-white font-bold rounded-md bg-[#2c8ace] w-32"
+            >
             Apply Leave
           </button>
         </div>
@@ -128,7 +146,8 @@
 
           <button
             type="submit"
-            class="py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+            (click)="onSubmit()"
+            class="p-3 text-xl text-white font-bold rounded-md bg-[#2c8ace] w-48"
           >
             Submit
           </button>
