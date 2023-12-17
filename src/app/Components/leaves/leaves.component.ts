@@ -33,15 +33,27 @@ export class LeavesComponent implements OnInit {
   }
 
   async onSubmit() {
+    this.rewardPoints = 0;
+
     if (this.leaveApprovalForm.valid) {
-      this.rewardPoints = await this.gamification.updateGameAction(
-        this.gameConfigs.userId,
-        this.gameConfigs.workHistorySubmissionAction,
-        '',
-        ''
-      );
+      if (this.leaveApprovalForm.value.leaveType === 'casual') {
+        this.rewardPoints = await this.gamification.updateGameAction(
+          this.gameConfigs.userId,
+          this.gameConfigs.casualLeaveAction,
+          '',
+          ''
+        );
+      } else if (this.leaveApprovalForm.value.leaveType === 'earned') {
+        this.rewardPoints = await this.gamification.updateGameAction(
+          this.gameConfigs.userId,
+          this.gameConfigs.earnedLeaveAction,
+          '',
+          ''
+        );
+      }
+
       this.toggleContrtsPopup();
-      this.toasterService.show(this.rewardPoints.points);
+      this.rewardPoints && this.toasterService.show(this.rewardPoints.points);
     }
   }
 
