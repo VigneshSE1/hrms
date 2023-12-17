@@ -24,6 +24,9 @@ export class TimesheetComponent implements OnInit {
     this.timesheetForm = this.fb.group({
       projects: this.fb.array([this.createProject()]),
     });
+    for (let i = 0; i < 4; i++) {
+      this.addProject();
+    }
   }
 
   createProject(): FormGroup {
