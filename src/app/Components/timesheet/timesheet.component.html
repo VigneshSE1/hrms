@@ -1,156 +1,166 @@
-<div class="flex flex-col m-10 gap-3">
-  <!-- header -->
-  <div class="flex justify-between">
-    <div class="flex flex-col">
-      <span class="text-3xl">Time Sheet - Weekly</span>
-      <span class="text-2xl">This Week, 9 Oct -15 Oct 2023</span>
+<div *ngIf="isActivecongrats" class="modal-wrap">
+  <div class="modal-content text-center">
+    <div class="flex justify-end top-0">
+      <img
+        src="../../../assets/images/close.svg"
+        class="cursor-pointer"
+        (click)="toggleContrtsPopup()"
+        alt="closeIcon"
+      />
     </div>
-
-    <div class="flex gap-3">
-      <button>Previous</button>
-      <button>Next</button>
+    <div class="flex justify-center">
+      <img src="../../../assets/images/congragulations.svg" alt="popup" />
     </div>
-  </div>
-  <!-- table -->
-  <div class="flex flex-col gap-3 border rounded-2xl p-5 bg-white">
-    <div class="flex w-full gap-4">
-      <div class="w-[20%]">
-        <div class="bg-[#F7F7F7] flex-grow w-full p-2 border rounded">
-          PROJECT
-        </div>
-      </div>
-      <div class="w-[20%]">
-        <div class="bg-[#F7F7F7] flex-grow w-full p-2 border rounded">
-          RESPONSIBILITY
-        </div>
-      </div>
-      <div class="w-[60%] flex">
-        <div class="bg-[#F7F7F7] flex-grow p-2">MONDAY</div>
-        <div class="bg-[#F7F7F7] flex-grow p-2">TUESDAY</div>
-        <div class="bg-[#F7F7F7] flex-grow p-2">WEDNESDAY</div>
-        <div class="bg-[#F7F7F7] flex-grow p-2">THURSDAY</div>
-        <div class="bg-[#F7F7F7] flex-grow p-2">FRIDAY</div>
-      </div>
-    </div>
-    <!-- use ngfor -->
-    <div class="flex flex-col gap-2 w-full">
-      <div class="flex w-full gap-4">
-        <div class="w-[20%]">
-          <select class="border rounded-lg p-1 w-full">
-            <option value="">Select</option>
-          </select>
-        </div>
-        <div class="w-[20%]">
-          <input
-            class="w-full p-1 border rounded-lg"
-            type="text"
-            placeholder="Task"
-          />
-        </div>
-        <div class="w-[60%] flex flex-grow gap-2 flex-wrap">
-          <input
-            class="flex-grow border rounded-lg"
-            type="text"
-            placeholder="03:00"
-          />
-
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm "
-          />
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm"
-          />
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm"
-          />
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm"
-          />
-        </div>
-      </div>
-      <div class="flex flex-grow w-full gap-4">
-        <div class="w-[20%]">
-          <select class="border rounded-lg p-1 w-full">
-            <option value="">Select</option>
-          </select>
-        </div>
-        <div class="w-[20%]">
-          <input
-            class="w-full p-1 border rounded-lg"
-            type="text"
-            placeholder="Task"
-          />
-        </div>
-        <div class="w-[60%] flex flex-grow gap-2 flex-wrap">
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="03:00"
-          />
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm "
-          />
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm"
-          />
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm"
-          />
-          <input
-            class="bg-[#F7F7F7] flex-grow border rounded-lg"
-            type="text"
-            placeholder="hh:mm"
-          />
-        </div>
-      </div>
-      <div class="flex gap-5 text-white">
-        <button class="p-2 bg-[#2c8ace] rounded-lg">Add Project</button>
-        <button class="p-2 bg-[#2c8ace] rounded-lg">Submit</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- footer -->
-  <div class="flex w-full">
-    <div class="w-[40%] bg-[#F7F7F7] text-right flex-grow p-2 border rounded">
-      TOTAL
-    </div>
-
-    <div class="flex text-center gap-5 w-[60%]">
-      <span
-        class="flex items-center justify-center w-full h-full rounded-lg border"
-        >8:00</span
-      >
-      <span
-        class="flex items-center justify-center w-full h-full rounded-lg border"
-        >8:00</span
-      >
-      <span
-        class="flex items-center justify-center w-full h-full rounded-lg border"
-        >8:00</span
-      >
-      <span
-        class="flex items-center justify-center w-full h-full rounded-lg border"
-        >8:00</span
-      >
-      <span
-        class="flex items-center justify-center w-full h-full rounded-lg border"
-        >8:00</span
-      >
+    <div class="text-2xl my-4">Congratulations!</div>
+    <div class="text-base mb-5">
+      You have completed first step sucessfully and earned
+      <span class="text-orange-600 font-bold">{{ rewardPoints?.points }} </span>
+      Points
     </div>
   </div>
 </div>
+
+<div class="header m-10">
+  <div class="text-3xl font-medium">Time Sheet - Weekly</div>
+  <div class="flex justify-between my-2">
+    <div class="text-xl text-gray-500 font-medium">
+      THIS WEEK,18 DEC - 24 DEC 2023
+    </div>
+    <div class="flex gap-4 text-lg justify-end cursor-not-allowed opacity-50">
+      <div>< Previous</div>
+      <div>Next ></div>
+    </div>
+  </div>
+</div>
+
+<form
+  [formGroup]="timesheetForm"
+  (ngSubmit)="onSubmit()"
+  class="mt-10 main-container h-full m-10 p-5"
+>
+  <div formArrayName="projects">
+    <div class="flex justify-center items-center gap-4">
+      <label class="w-80 block mb-2 text-md text-gray-400" for="projectName"
+        >Project
+      </label>
+      <label class="w-64 block mb-2 text-md text-gray-400" for="responsibility"
+        >Responsibility</label
+      >
+
+      <label class="w-32 block mb-2 text-md text-gray-400" for="monday"
+        >Monday</label
+      >
+      <label class="w-32 block mb-2 text-md text-gray-400" for="tuesday"
+        >Tuesday</label
+      >
+      <label class="w-32 block mb-2 text-md text-gray-400" for="wednesday"
+        >Wednesday</label
+      >
+      <label class="w-32 block mb-2 text-md text-gray-400" for="thursday"
+        >Thursday</label
+      >
+      <label class="w-32 block mb-2 text-md text-gray-400" for="friday"
+        >Friday</label
+      >
+    </div>
+    <div
+      *ngFor="let project of projects.controls; let i = index"
+      [formGroupName]="i"
+      class="my-3"
+    >
+      <div class="flex justify-center items-center gap-4">
+        <div>
+          <select
+            class="w-80 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            id="projectName"
+            formControlName="projectName"
+            required
+          >
+            <option value="" disabled selected>Select</option>
+            <option
+              *ngFor="let projectName of projectNames"
+              [value]="projectName"
+            >
+              {{ projectName }}
+            </option>
+          </select>
+        </div>
+        <div class="w-64">
+          <input
+            placeholder="Task"
+            class="w-full rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            type="text"
+            id="responsibility"
+            formControlName="responsibility"
+            required
+          />
+        </div>
+        <div>
+          <input
+            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            type="text"
+            id="monday"
+            formControlName="monday"
+            placeholder="hh:mm"
+          />
+        </div>
+        <div>
+          <input
+            [attr.disabled]="true"
+            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            type="text"
+            id="tuesday"
+            formControlName="tuesday"
+            placeholder="hh:mm"
+          />
+        </div>
+        <div>
+          <input
+            [attr.disabled]="true"
+            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            type="text"
+            id="wednesday"
+            formControlName="wednesday"
+            placeholder="hh:mm"
+          />
+        </div>
+        <div>
+          <input
+            [attr.disabled]="true"
+            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            type="text"
+            id="thursday"
+            formControlName="thursday"
+            placeholder="hh:mm"
+          />
+        </div>
+        <div>
+          <input
+            [attr.disabled]="true"
+            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            type="text"
+            id="friday"
+            formControlName="friday"
+            placeholder="hh:mm"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="p-2 text-base text-white font-medium rounded-md bg-[#2c8ace]"
+    (click)="addProject()"
+  >
+    Add Project
+  </button>
+  <div class="flex justify-center items-center">
+    <button
+      class="p-2 text-base text-white font-medium rounded-md bg-[#2c8ace]"
+      type="submit"
+    >
+      Submit
+    </button>
+  </div>
+</form>
