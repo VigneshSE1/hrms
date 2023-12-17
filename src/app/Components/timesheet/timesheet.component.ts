@@ -53,17 +53,13 @@ export class TimesheetComponent implements OnInit {
   async onSubmit() {
     this.rewardPoints = await this.gamification.updateGameAction(
       this.gameConfigs.userId,
-      this.gameConfigs.profileSubmissionAction,
+      this.gameConfigs.timeSheetSubmission,
       '',
       ''
     );
 
     this.toggleContrtsPopup();
 
-    // sessionStorage.setItem(
-    //   Form.PERSONAL_INFO_FORM,
-    //   JSON.stringify(this.myForm?.value)
-    // );
     this.toasterService.show(this.rewardPoints.points);
   }
 

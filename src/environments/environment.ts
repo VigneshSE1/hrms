@@ -8,5 +8,8 @@ export const environment = {
     profileSubmissionAction: '65794ab889dfc55f3e41eace',
     competancySubmissionAction: '65794b3089dfc5d04a420184',
     workHistorySubmissionAction: '65794c6e89dfc502b5423cda',
+    timeSheetSubmission: '65794f4489dfc5216b4258cf',
+    casualLeaveAction: '65794e3989dfc530d642570e',
+    earnedLeaveAction: '65794ecb89dfc56d1542589c',
   },
 };
