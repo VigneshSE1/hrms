@@ -1,15 +1,15 @@
 import { MainMenu, MenuList } from '../Models/sidebar-menu-list.model';
 
 export const sidebarMenuLists: MenuList[] = [
-  // {
-  //   menuId: MainMenu.Info,
-  //   label: '',
-  //   imageUrl: '../assets/images/dashboard_icon.svg',
-  //   activeImageUrl: '../assets/images/dashboard_icon.svg',
-  //   alt: 'Home',
-  //   isActive: false,
-  //   subItem: [],
-  // },
+  {
+    menuId: MainMenu.Info,
+    label: '',
+    imageUrl: '../assets/images/dashboard_icon.svg',
+    activeImageUrl: '../assets/images/dashboard_icon.svg',
+    alt: 'Home',
+    isActive: false,
+    subItem: [],
+  },
   {
     menuId: MainMenu.Info,
     label: 'information',
@@ -19,15 +19,7 @@ export const sidebarMenuLists: MenuList[] = [
     isActive: false,
     subItem: [],
   },
-  // {
-  //   menuId: MainMenu.Leave,
-  //   label: '',
-  //   imageUrl: '../assets/images/organization_icon.svg',
-  //   activeImageUrl: '../assets/images/organization_icon.svg',
-  //   alt: 'Home',
-  //   isActive: false,
-  //   subItem: [],
-  // },
+
   {
     menuId: MainMenu.TimeSheet,
     label: 'time-sheet',
@@ -46,22 +38,31 @@ export const sidebarMenuLists: MenuList[] = [
     isActive: false,
     subItem: [],
   },
-  // {
-  //   menuId: MainMenu.Leave,
-  //   label: '',
-  //   imageUrl: '../assets/images/goal_icon.svg',
-  //   activeImageUrl: '../assets/images/goal_icon.svg',
-  //   alt: 'Home',
-  //   isActive: false,
-  //   subItem: [],
-  // },
-  // {
-  //   menuId: MainMenu.TimeSheet,
-  //   label: '',
-  //   imageUrl: '../assets/images/refer_icon.svg',
-  //   activeImageUrl: '../assets/images/refer_icon.svg',
-  //   alt: 'Home',
-  //   isActive: false,
-  //   subItem: [],
-  // },
+    {
+    menuId: MainMenu.Leave,
+    label: '',
+    imageUrl: '../assets/images/organization_icon.svg',
+    activeImageUrl: '../assets/images/organization_icon.svg',
+    alt: 'Home',
+    isActive: false,
+    subItem: [],
+  },
+  {
+    menuId: MainMenu.Leave,
+    label: '',
+    imageUrl: '../assets/images/goal_icon.svg',
+    activeImageUrl: '../assets/images/goal_icon.svg',
+    alt: 'Home',
+    isActive: false,
+    subItem: [],
+  },
+  {
+    menuId: MainMenu.TimeSheet,
+    label: '',
+    imageUrl: '../assets/images/refer_icon.svg',
+    activeImageUrl: '../assets/images/refer_icon.svg',
+    alt: 'Home',
+    isActive: false,
+    subItem: [],
+  },
 ];
