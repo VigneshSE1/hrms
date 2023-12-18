@@ -36,11 +36,11 @@
         <div class="flex justify-between w-full">
           <div class="w-1/2 pr-4">
             <label for="courseName" class="block mb-2 text-md text-gray-400"
-              >Course Name</label
+              >Degree Name</label
             >
             <input
               type="text"
-              placeholder="Course Name"
+              placeholder="Degree Name"
               id="courseName"
               formControlName="courseName"
               class="w-full rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
@@ -53,11 +53,24 @@
               class="text-red-500 text-sm mt-1"
             >
               <span *ngIf="competency.get('courseName')?.hasError('required')"
-                >Course Name is required</span
+                >Degree Name is required</span
               >
             </div>
           </div>
 
+          <div class="w-1/2">
+            <label for="certificate" class="block mb-2 text-md text-gray-400"
+              >Upload Certificate</label
+            >
+            <input
+              type="file"
+              id="certificate"
+              formControlName="certificate"
+              class="w-full rounded-md p-1 border border-gray-300 focus:outline-none"
+            />
+          </div>
+        </div>
+        <div class="flex gap-4 justify-between w-full mt-4">
           <div class="w-1/2">
             <label for="durationFrom" class="block mb-2 text-md text-gray-400"
               >Duration From</label
@@ -80,9 +93,7 @@
               >
             </div>
           </div>
-        </div>
-        <div class="flex justify-between w-full mt-4">
-          <div class="w-1/2 pr-4">
+          <div class="w-1/2">
             <label for="durationTo" class="block mb-2 text-md text-gray-400"
               >Duration To</label
             >
@@ -103,17 +114,6 @@
                 >Duration To is required</span
               >
             </div>
-          </div>
-          <div class="w-1/2">
-            <label for="certificate" class="block mb-2 text-md text-gray-400"
-              >Upload Certificate</label
-            >
-            <input
-              type="file"
-              id="certificate"
-              formControlName="certificate"
-              class="w-full rounded-md p-2 border border-gray-300 focus:outline-none"
-            />
           </div>
         </div>
 

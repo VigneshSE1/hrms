@@ -54,29 +54,18 @@
               >
             </div>
           </div>
-
           <div class="w-1/2">
-            <label for="durationFrom" class="block mb-2 text-md text-gray-400"
-              >Duration From</label
+            <label
+              for="relievingCertificate"
+              class="block mb-2 text-md text-gray-400"
+              >Relieving Certificate</label
             >
             <input
-              type="date"
-              id="durationFrom"
-              formControlName="durationFrom"
-              class="w-full rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
+              type="file"
+              id="relievingCertificate"
+              formControlName="relievingCertificate"
+              class="w-full rounded-md p-1 border border-gray-300 focus:outline-none"
             />
-            <div
-              *ngIf="
-                workHistory.get('durationFrom')?.invalid &&
-                workHistory.get('durationFrom')?.touched
-              "
-              class="text-red-500 text-sm mt-1"
-            >
-              <span
-                *ngIf="workHistory.get('durationFrom')?.hasError('required')"
-                >Duration From is required</span
-              >
-            </div>
           </div>
         </div>
 
@@ -103,19 +92,28 @@
               >
             </div>
           </div>
-
           <div class="w-1/2">
-            <label
-              for="relievingCertificate"
-              class="block mb-2 text-md text-gray-400"
-              >Relieving Certificate</label
+            <label for="durationFrom" class="block mb-2 text-md text-gray-400"
+              >Duration From</label
             >
             <input
-              type="file"
-              id="relievingCertificate"
-              formControlName="relievingCertificate"
-              class="w-full rounded-md p-2 border border-gray-300 focus:outline-none"
+              type="date"
+              id="durationFrom"
+              formControlName="durationFrom"
+              class="w-full rounded-md p-2 placeholder-gray-300 border border-gray-300 focus:outline-none"
             />
+            <div
+              *ngIf="
+                workHistory.get('durationFrom')?.invalid &&
+                workHistory.get('durationFrom')?.touched
+              "
+              class="text-red-500 text-sm mt-1"
+            >
+              <span
+                *ngIf="workHistory.get('durationFrom')?.hasError('required')"
+                >Duration From is required</span
+              >
+            </div>
           </div>
         </div>
 

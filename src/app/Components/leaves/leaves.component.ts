@@ -43,6 +43,7 @@ export class LeavesComponent implements OnInit {
           '',
           ''
         );
+        this.toggleContrtsPopup();
       } else if (this.leaveApprovalForm.value.leaveType === 'earned') {
         this.rewardPoints = await this.gamification.updateGameAction(
           this.gameConfigs.userId,
@@ -50,9 +51,9 @@ export class LeavesComponent implements OnInit {
           '',
           ''
         );
+        this.toggleContrtsPopup();
       }
 
-      this.toggleContrtsPopup();
       // this.rewardPoints && this.toasterService.show(this.rewardPoints.points);
     }
   }
