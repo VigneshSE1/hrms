@@ -61,7 +61,7 @@ export class CompetencyComponent implements OnInit {
         ''
       );
       this.toggleContrtsPopup();
-      this.toasterService.show(this.rewardPoints.points);
+      // this.toasterService.show(this.rewardPoints.points);
       sessionStorage.setItem(
         Form.COMPETENCY_FORM,
         JSON.stringify(this.competencyForm?.value)

@@ -63,7 +63,7 @@ export class TimesheetComponent implements OnInit {
 
     this.toggleContrtsPopup();
 
-    this.toasterService.show(this.rewardPoints.points);
+    // this.toasterService.show(this.rewardPoints.points);
   }
 
   toggleContrtsPopup() {

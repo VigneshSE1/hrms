@@ -53,7 +53,7 @@ export class LeavesComponent implements OnInit {
       }
 
       this.toggleContrtsPopup();
-      this.rewardPoints && this.toasterService.show(this.rewardPoints.points);
+      // this.rewardPoints && this.toasterService.show(this.rewardPoints.points);
     }
   }
 

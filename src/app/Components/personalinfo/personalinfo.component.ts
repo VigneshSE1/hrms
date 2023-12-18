@@ -76,7 +76,7 @@ export class PersonalinfoComponent {
     // setTimeout(() => {
     //   this.myForm.markAsUntouched();
     // });
-    this.toasterService.show(this.rewardPoints.points);
+    // this.toasterService.show(this.rewardPoints.points);
   }
 
   toggleContrtsPopup() {

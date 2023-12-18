@@ -63,7 +63,7 @@ export class WorkhistoryComponent implements OnInit {
         ''
       );
       this.togglePopup();
-      this.toasterService.show(this.rewardPoints.points);
+      // this.toasterService.show(this.rewardPoints.points);
 
       sessionStorage.setItem(
         Form.WORK_HISTORY,
