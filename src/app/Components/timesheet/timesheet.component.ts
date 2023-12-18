@@ -14,7 +14,7 @@ export class TimesheetComponent implements OnInit {
   isActivecongrats = false;
   rewardPoints: any;
   gameConfigs = environment.gamification;
-  projectNames = ['Project A', 'Project B', 'Project C'];
+  projectNames = ['MetLife', 'Mercury Insurance', 'SBI Life'];
   constructor(
     private fb: FormBuilder,
     private gamification: Gamification,

@@ -13,197 +13,198 @@
     </div>
     <div class="text-2xl my-4">Congratulations!</div>
     <div class="text-base mb-5">
-      You have sucessfully completed the timesheet and earned 
+      You have sucessfully completed the timesheet and earned
       <span class="text-orange-600 font-bold">{{ rewardPoints?.points }} </span>
       Points
     </div>
   </div>
 </div>
 <div class="flex-1 h-[80%] w-[80%] ml-[10%] my-2 pt-2">
-<div class="header">
-  <div class="text-3xl font-medium">Time Sheet - Weekly</div>
-  <div class="flex justify-between my-2">
-    <div class="text-xl text-gray-500 font-medium">
-      THIS WEEK,18 DEC - 24 DEC 2023
-    </div>
-    <div
-      class="-z-30 flex gap-4 text-lg justify-end cursor-not-allowed opacity-50"
-    >
-      <div>< Previous</div>
-      <div>Next ></div>
-    </div>
-  </div>
-</div>
-
-<form
-  [formGroup]="timesheetForm"
-  (ngSubmit)="onSubmit()"
-  class="main-container h-full  p-5"
->
-  <div formArrayName="projects">
-    <div class="flex justify-center items-center gap-4">
-      <label
-        class="bg-[#fafafa] p-3 rounded-md w-80 block mb-2 text-md text-gray-400"
-        for="projectName"
-        >Project
-      </label>
-      <label
-        class="bg-[#fafafa] p-3 rounded-md w-64 block mb-2 text-md text-gray-400"
-        for="responsibility"
-        >Responsibility</label
-      >
-
+  <div class="header">
+    <div class="text-3xl font-medium">Time Sheet - Weekly</div>
+    <div class="flex justify-between my-2">
+      <div class="text-xl text-gray-500 font-medium">
+        THIS WEEK,18 DEC - 24 DEC 2023
+      </div>
       <div
-        class="bg-[#fafafa] -mt-2 flex justify-center items-center rounded-md gap-4"
+        class="-z-30 flex gap-4 text-lg justify-end cursor-not-allowed opacity-50"
       >
-        <label
-          class="p-3 rounded-md w-32 block text-md text-gray-400"
-          for="monday"
-          >Monday</label
-        >
-        <label
-          class="p-3 rounded-md w-32 block text-md text-gray-400"
-          for="tuesday"
-          >Tuesday</label
-        >
-        <label
-          class="p-3 rounded-md w-32 block text-md text-gray-400"
-          for="wednesday"
-          >Wednesday</label
-        >
-        <label
-          class="p-3 rounded-md w-32 block text-md text-gray-400"
-          for="thursday"
-          >Thursday</label
-        >
-        <label
-          class="p-3 rounded-md w-32 block text-md text-gray-400"
-          for="friday"
-          >Friday</label
-        >
+        <div>< Previous</div>
+        <div>Next ></div>
       </div>
     </div>
-    <div
-      *ngFor="let project of projects.controls; let i = index"
-      [formGroupName]="i"
-      class="my-3"
-    >
+  </div>
+
+  <form
+    [formGroup]="timesheetForm"
+    (ngSubmit)="onSubmit()"
+    class="main-container h-full p-5"
+  >
+    <div formArrayName="projects">
       <div class="flex justify-center items-center gap-4">
-        <select
-          class="w-80 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
-          id="projectName"
-          formControlName="projectName"
-          required
+        <label
+          class="bg-[#fafafa] p-3 rounded-md w-80 block mb-2 text-md text-gray-400"
+          for="projectName"
+          >Project
+        </label>
+        <label
+          class="bg-[#fafafa] p-3 rounded-md w-64 block mb-2 text-md text-gray-400"
+          for="responsibility"
+          >Responsibility</label
         >
-          <option value="" disabled selected>Select</option>
-          <option
-            *ngFor="let projectName of projectNames"
-            [value]="projectName"
+
+        <div
+          class="bg-[#fafafa] -mt-2 flex justify-center items-center rounded-md gap-4"
+        >
+          <label
+            class="p-3 rounded-md w-32 block text-md text-gray-400"
+            for="monday"
+            >18-12-2023</label
           >
-            {{ projectName }}
-          </option>
-        </select>
-        <div class="w-64">
-          <input
-            placeholder="Task"
-            class="w-full rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
-            type="text"
-            id="responsibility"
-            formControlName="responsibility"
+          <label
+            class="p-3 rounded-md w-32 block text-md text-gray-400"
+            for="tuesday"
+            >19-12-2023</label
+          >
+          <label
+            class="p-3 rounded-md w-32 block text-md text-gray-400"
+            for="wednesday"
+            >20-12-2023</label
+          >
+          <label
+            class="p-3 rounded-md w-32 block text-md text-gray-400"
+            for="thursday"
+            >21-12-2023</label
+          >
+          <label
+            class="p-3 rounded-md w-32 block text-md text-gray-400"
+            for="friday"
+            >22-12-2023</label
+          >
+        </div>
+      </div>
+      <div
+        *ngFor="let project of projects.controls; let i = index"
+        [formGroupName]="i"
+        class="my-3"
+      >
+        <div class="flex justify-center items-center gap-4">
+          <select
+            class="w-80 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+            id="projectName"
+            formControlName="projectName"
             required
-          />
-        </div>
-        <div>
-          <input
-            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
-            type="text"
-            id="monday"
-            formControlName="monday"
-            placeholder="hh:mm"
-          />
-        </div>
-        <div>
-          <input
-            [attr.disabled]="true"
-            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
-            type="text"
-            id="tuesday"
-            formControlName="tuesday"
-            placeholder="hh:mm"
-          />
-        </div>
-        <div>
-          <input
-            [attr.disabled]="true"
-            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
-            type="text"
-            id="wednesday"
-            formControlName="wednesday"
-            placeholder="hh:mm"
-          />
-        </div>
-        <div>
-          <input
-            [attr.disabled]="true"
-            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
-            type="text"
-            id="thursday"
-            formControlName="thursday"
-            placeholder="hh:mm"
-          />
-        </div>
-        <div>
-          <input
-            [attr.disabled]="true"
-            class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
-            type="text"
-            id="friday"
-            formControlName="friday"
-            placeholder="hh:mm"
-          />
+          >
+            <option value="" disabled selected>Select</option>
+            <option
+              *ngFor="let projectName of projectNames"
+              [value]="projectName"
+            >
+              {{ projectName }}
+            </option>
+          </select>
+          <div class="w-64">
+            <input
+              placeholder="Task"
+              class="w-full rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+              type="text"
+              id="responsibility"
+              formControlName="responsibility"
+              required
+            />
+          </div>
+          <div>
+            <input
+              class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+              type="text"
+              id="monday"
+              formControlName="monday"
+            />
+          </div>
+          <div>
+            <input
+              [attr.disabled]="true"
+              class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+              type="text"
+              id="tuesday"
+              formControlName="tuesday"
+            />
+          </div>
+          <div>
+            <input
+              [attr.disabled]="true"
+              class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+              type="text"
+              id="wednesday"
+              formControlName="wednesday"
+            />
+          </div>
+          <div>
+            <input
+              [attr.disabled]="true"
+              class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+              type="text"
+              id="thursday"
+              formControlName="thursday"
+            />
+          </div>
+          <div>
+            <input
+              [attr.disabled]="true"
+              class="w-32 rounded-md p-3 placeholder-gray-300 border border-gray-300 focus:outline-none"
+              type="text"
+              id="friday"
+              formControlName="friday"
+            />
+          </div>
         </div>
       </div>
-    </div>
-    <div class="flex justify-center items-center gap-4">
-      <div class="w-80">
-        <button
-          type="button"
-          class="p-2 text-base text-white font-medium rounded-md bg-[#2c8ace]"
-          (click)="addProject()"
-        >
-          Add Project
-        </button>
+      <div class="flex justify-center items-center gap-4">
+        <div class="w-80">
+          <button
+            type="button"
+            class="p-2 text-base text-white font-medium rounded-md bg-[#2c8ace]"
+            (click)="addProject()"
+          >
+            Add Project
+          </button>
+        </div>
+
+        <label
+          class="w-64 block mb-2 text-md text-gray-400"
+          for="responsibility"
+        ></label>
+
+        <label
+          class="w-32 block mb-2 text-md text-gray-400"
+          for="monday"
+        ></label>
+        <label
+          class="w-32 block mb-2 text-md text-gray-400"
+          for="tuesday"
+        ></label>
+        <label
+          class="w-32 block mb-2 text-md text-gray-400"
+          for="wednesday"
+        ></label>
+        <label
+          class="w-32 block mb-2 text-md text-gray-400"
+          for="thursday"
+        ></label>
+        <label
+          class="w-32 block mb-2 text-md text-gray-400"
+          for="friday"
+        ></label>
       </div>
-
-      <label
-        class="w-64 block mb-2 text-md text-gray-400"
-        for="responsibility"
-      ></label>
-
-      <label class="w-32 block mb-2 text-md text-gray-400" for="monday"></label>
-      <label
-        class="w-32 block mb-2 text-md text-gray-400"
-        for="tuesday"
-      ></label>
-      <label
-        class="w-32 block mb-2 text-md text-gray-400"
-        for="wednesday"
-      ></label>
-      <label
-        class="w-32 block mb-2 text-md text-gray-400"
-        for="thursday"
-      ></label>
-      <label class="w-32 block mb-2 text-md text-gray-400" for="friday"></label>
     </div>
-  </div>
-  <div class="bg-black mx-20"></div>
-  <div class="flex justify-center items-center">
-    <button
-      class="p-2 text-base text-white font-medium rounded-md bg-[#2c8ace]"
-      type="submit"
-    >
-      Submit
-    </button>
-  </div>
-</form>
+    <div class="bg-black mx-20"></div>
+    <div class="flex justify-center items-center">
+      <button
+        class="p-2 text-base text-white font-medium rounded-md bg-[#2c8ace]"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
 </div>
